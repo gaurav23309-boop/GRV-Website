@@ -275,6 +275,22 @@ img{max-width:100%;display:block}
   .detail-quote-inner{padding:18px}
 }
 
+/* ===== PROJECTS ===== */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:24px;margin-top:32px}
+.proj-card{background:var(--pure-white);border:1px solid rgba(0,0,0,.06);border-radius:16px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease);cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.proj-card-img{aspect-ratio:16/9;overflow:hidden;background:var(--white)}
+.proj-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.proj-card:hover .proj-card-img img{transform:scale(1.08)}
+.proj-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.proj-card-body h3{font-family:var(--font-h);font-size:1.15rem;font-weight:700;color:var(--navy);transition:color .3s}
+.proj-card:hover .proj-card-body h3{color:var(--teal)}
+.proj-card-body p{font-size:.9rem;color:rgba(45,52,54,.6);margin-top:10px;line-height:1.6;flex:1}
+.proj-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:.85rem;font-weight:600;color:var(--teal);text-decoration:none;transition:gap .3s}
+.proj-card-link:hover{gap:10px;text-decoration:underline}
+.proj-card-link svg{transition:transform .3s}
+.proj-card-link:hover svg{transform:translateX(3px)}
+
 /* ===== TESTIMONIALS ===== */
 .testimonials{background:var(--white)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
@@ -578,6 +594,7 @@ img{max-width:100%;display:block}
     <li class="active"><a href="#hero">Home</a></li>
     <li><a href="#how">How We Work</a></li>
     <li><a href="#products">Products</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#reviews">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="nav-cta-wrap">
@@ -803,6 +820,52 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
+<!-- PROJECTS -->
+<section class="section projects" id="projects">
+<div class="container">
+<div class="rv" style="text-align:center">
+  <div class="section-label">Our Projects</div>
+  <div class="section-title">Engineering Solutions in Action</div>
+  <p class="section-desc" style="margin:0 auto">See how our custom sensors and load cells perform in real-world industrial applications.</p>
+</div>
+<div class="proj-grid rv">
+  <div class="proj-card">
+    <div class="proj-card-img"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80" alt="Industrial Automation" loading="lazy"></div>
+    <div class="proj-card-body">
+      <h3>Industrial Weighing System</h3>
+      <p>Custom load cell integration for a large-scale industrial weighing system, achieving 0.02% accuracy across a 50-tonne range.</p>
+      <a href="https://wa.me/919008300172?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20industrial%20weighing%20projects." class="proj-card-link" target="_blank">
+        Learn More
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="proj-card">
+    <div class="proj-card-img"><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&auto=format&fit=crop&q=80" alt="Force Testing" loading="lazy"></div>
+    <div class="proj-card-body">
+      <h3>Crane Overload Protection</h3>
+      <p>Engineered a multi-axial force sensor system for real-time crane load monitoring with automatic overload shutoff.</p>
+      <a href="https://wa.me/919008300172?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20crane%20monitoring%20projects." class="proj-card-link" target="_blank">
+        Learn More
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="proj-card">
+    <div class="proj-card-img"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&auto=format&fit=crop&q=80" alt="Torque Measurement" loading="lazy"></div>
+    <div class="proj-card-body">
+      <h3>Dynamic Torque Testing Rig</h3>
+      <p>Deployed precision dynamic torque sensors for an automotive testing facility, enabling real-time drivetrain analysis up to 20,000 N.m.</p>
+      <a href="https://wa.me/919008300172?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20torque%20testing%20projects." class="proj-card-link" target="_blank">
+        Learn More
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="section testimonials" id="reviews">
 <div class="container">
@@ -860,6 +923,7 @@ img{max-width:100%;display:block}
       <ul>
         <li><a href="#how">How We Work</a></li>
         <li><a href="#products">Products</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#reviews">Testimonials</a></li>
         <li><a href="mailto:info@grvautomation.com">Contact</a></li>
       </ul>
