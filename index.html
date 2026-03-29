@@ -415,9 +415,8 @@ img{max-width:100%;display:block}
     background:none !important;
   }
 
-  /* CTA — hide the nav button on mobile but keep the dropdown accessible */
-  .nav-cta-wrap{position:static !important;width:0 !important;height:0 !important;overflow:visible !important;padding:0 !important;margin:0 !important;border:none !important;flex-shrink:0 !important}
-  .nav-cta-wrap>.nav-cta{display:none !important}
+  /* CTA — hide nav button on mobile; use fixed bar instead */
+  .nav-cta-wrap{display:none !important}
 
   /* Fixed mobile Request a Quote button — always visible at bottom */
   .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);justify-content:center}
@@ -1064,18 +1063,21 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hambur
   });
 })();
 
-// Mobile Request a Quote button — opens the same quote dropdown
+// Mobile: move quote dropdown to body so it's not hidden inside nav-cta-wrap
 (function(){
   var mobBtn=document.getElementById('mobQuoteBtn');
   var dd=document.getElementById('quoteDropdown');
-  if(mobBtn&&dd){
-    mobBtn.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      dd.classList.toggle('open');
-      document.body.style.overflow=dd.classList.contains('open')?'hidden':'';
-    });
+  if(!mobBtn||!dd)return;
+  // On mobile (<=960px), move dropdown to body
+  if(window.innerWidth<=960){
+    document.body.appendChild(dd);
   }
+  mobBtn.addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    dd.classList.toggle('open');
+    document.body.style.overflow=dd.classList.contains('open')?'hidden':'';
+  });
 })();
 
 // Interactive menu tabs
