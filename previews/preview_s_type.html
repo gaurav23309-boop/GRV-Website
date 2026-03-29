@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>S Type Load Cells — Image Preview</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0e1a2b; color:#fff; font-family:'Segoe UI',system-ui,sans-serif; padding:30px; }
+  h1 { text-align:center; margin-bottom:30px; font-size:1.8rem; color:#00bfa6; }
+  .product { margin-bottom:40px; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:20px; background:rgba(255,255,255,.04); }
+  .product h2 { font-size:1.2rem; margin-bottom:4px; color:#fff; }
+  .product .title { font-size:.8rem; color:rgba(255,255,255,.5); margin-bottom:16px; max-width:600px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .images { display:flex; gap:12px; flex-wrap:wrap; }
+  .img-card { background:rgba(255,255,255,.9); border-radius:8px; padding:8px; width:200px; height:200px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .img-card img { max-width:100%; max-height:100%; object-fit:contain; }
+  .img-card .idx { position:absolute; top:4px; left:8px; font-size:.65rem; color:#666; }
+  .note { text-align:center; color:rgba(255,255,255,.4); font-size:.8rem; margin-top:40px; }
+</style>
+</head>
+<body>
+<h1>S Type Load Cells — Scraped Images Preview</h1>
+<p style="text-align:center;color:rgba(255,255,255,.5);margin-bottom:30px;">Showing first 8 images per product from 7sensor.com CDN</p>
+
+<script>
+const products = [
+  {
+    model: "DYLY-109",
+    title: "Micro S-type tension pressure sensor",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRmkikmqomjm/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRmkikmqqmjm/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRmkikmqpmjm/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRmkikmqmmjm/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRmkikrprrjq/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRmkikrpirjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRmkikrpjrjq/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRmkikrpmrjq/8.jpg"
+    ]
+  },
+  {
+    model: "DYTSC-A",
+    title: "Crane Scales / S type Load Cell",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiomjoqjp/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomjlpjp/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiomjpqjp/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomjmqjp/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiomjkpjp/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiomjopjp/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiomjnpjp/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiomjqpjp/8.jpg"
+    ]
+  },
+  {
+    model: "DYLY-107",
+    title: "Digital Sensor Single Point Load Cell 30kg-200kg",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkioqjlqjp/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioqjjqjq/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkioqjmpjp/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioqjopjp/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioqjimjp/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkioqjqqjq/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkioqjkqjp/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkioqjnpjp/8.jpg"
+    ]
+  },
+  {
+    model: "DYLY-106",
+    title: "High accuracy miniature tension load cell 500g-50kg",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkionjonjq/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionjrnjq/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkionjjnjq/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkionjlnjq/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionjnnjq/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkionjmnjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkionjinjq/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkionjpnjq/8.jpg"
+    ]
+  },
+  {
+    model: "DYLY-104",
+    title: "300kg-10t S type High accuracy pressure weight sensor",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomirkjq/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomilkjq/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiominkjq/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiomiqkjp/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiomijkjq/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiomimkjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiomikkjq/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiomiqkjq/8.jpg"
+    ]
+  },
+  {
+    model: "DYLY-103",
+    title: "Alloy steel s type beam loadcell tension/compression",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionilqjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioniqojp/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioniqnjq/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioniiojq/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkionijojq/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkionioojq/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkionipojq/7.jpg"
+    ]
+  },
+  {
+    model: "DYLY-102",
+    title: "50kg-400kg Two Axis Load Sensors / S type",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiokrjqjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiokronjq/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiokrrqjq/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiokrpojq/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiokrqojq/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiokrmojq/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiokrnojq/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiokrrojq/8.jpg"
+    ]
+  },
+  {
+    model: "DYLY-101",
+    title: "100kg-5ton universal weighing sensor s type load cell",
+    images: [
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimppjp/1.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimqmjp/2.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkroimmmjp/3.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkrojmrrjq/4.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkrojmirjq/5.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkrojmjrjq/6.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkrojmmrjq/7.jpg",
+      "https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkrojmnrjq/8.jpg"
+    ]
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.querySelector('body');
+  products.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.innerHTML = `<h2>${p.model}</h2><p class="title">${p.title}</p><div class="images"></div>`;
+    const imgContainer = div.querySelector('.images');
+    p.images.forEach((url, i) => {
+      const card = document.createElement('div');
+      card.className = 'img-card';
+      card.innerHTML = `<span class="idx">#${i+1}</span><img src="${url}" alt="${p.model} image ${i+1}" loading="lazy" onerror="this.parentElement.style.background='#ff000022';this.alt='Failed to load'">`;
+      imgContainer.appendChild(card);
+    });
+    body.appendChild(div);
+  });
+});
+</script>
+</body>
+</html>

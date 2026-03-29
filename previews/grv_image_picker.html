@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GRV Image Picker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#060d1a;color:#eaf0ff;font-family:'Segoe UI',sans-serif;padding:24px}
+h1{text-align:center;color:#00bfa6;font-size:1.6rem;margin-bottom:4px}
+.sub{text-align:center;color:rgba(255,255,255,.35);font-size:.8rem;margin-bottom:12px}
+.top-btn{text-align:center;margin-bottom:30px}
+button{background:#00bfa6;color:#fff;border:none;padding:11px 32px;border-radius:8px;font-size:.95rem;font-weight:700;cursor:pointer}
+button:hover{background:#009d8b}
+section{margin-bottom:36px;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px;background:rgba(255,255,255,.015)}
+section h2{font-size:1rem;color:#00bfa6;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+section h2 em{font-size:.75rem;color:rgba(255,255,255,.3);font-weight:400;font-style:normal}
+.grid{display:flex;flex-wrap:wrap;gap:10px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:12px;width:420px}
+.card-hd{display:flex;align-items:baseline;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.card-hd b{font-size:.85rem;color:#e0eeff}
+.card-hd small{font-size:.65rem;color:rgba(255,255,255,.3)}
+.done{font-size:.6rem;background:rgba(0,191,166,.15);color:#00bfa6;padding:1px 6px;border-radius:4px;margin-left:auto}
+.img-row{display:flex;gap:5px}
+.opt{flex:1;background:rgba(255,255,255,.9);border-radius:6px;border:2px solid transparent;cursor:pointer;padding:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;transition:.15s}
+.opt img{max-width:100%;max-height:145px;object-fit:contain}
+.opt span{font-size:.55rem;color:#555;margin-top:3px}
+.opt.selected{border-color:#00bfa6;box-shadow:0 0 0 2px rgba(0,191,166,.3)}
+.opt.err{opacity:.25}
+.opt:hover{border-color:rgba(0,191,166,.5)}
+.no-match{font-size:.7rem;color:rgba(255,255,255,.2);padding:8px;text-align:center;width:100%}
+</style>
+</head>
+<body>
+<h1>GRV Product Image Picker</h1>
+<p class="sub">Click any image to select it (green border). When done, click Export.</p>
+<div class="top-btn"><button onclick="exportAll()">Export Selections</button></div>
+<section>
+  <h2>S Type Load Cells <em>(8 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYLY-101" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-101</b><small>0–20T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimppjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimppjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimqmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkroimqmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkroimmmjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkroimmmjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkrojmrrjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkrojmrrjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkrojmirjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkrojmirjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-102" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-102</b><small>0–7T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiokrjqjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiokrjqjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiokronjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiokronjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiokrrqjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiokrrqjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiokrpojq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiokrpojq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiokrqojq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiokrqojq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-103" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-103</b><small>0–5T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionilqjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionilqjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioniqojp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioniqojp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioniqnjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioniqnjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioniiojq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioniiojq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-104" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-104</b><small>0–10T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomirkjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomirkjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomilkjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomilkjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiominkjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiominkjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiomiqkjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiomiqkjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiomijkjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiomijkjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-105" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-105</b><small>0–1.5T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRmkikmqomjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRmkikmqomjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRmkikmqqmjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRmkikmqqmjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRmkikmqpmjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRmkikmqpmjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRmkikmqmmjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRmkikmqmmjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRmkikrprrjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRmkikrprrjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-106" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-106</b><small>0–100kg</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkionjonjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkionjonjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionjrnjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionjrnjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkionjjnjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkionjjnjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkionjlnjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkionjlnjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionjnnjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkionjnnjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLY-107" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-107</b><small>0–200kg</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkioqjlqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkioqjlqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioqjjqjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioqjjqjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkioqjmpjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkioqjmpjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioqjopjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkioqjopjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioqjimjp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioqjimjp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYTSC" data-cat="s-type">
+  <div class="card-hd"><b>DYTSC</b><small>50kg–1T</small><span class="done">✓</span></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiomjoqjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiomjoqjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomjlpjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiomjlpjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiomjpqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiomjpqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomjmqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiomjmqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiomjkpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiomjkpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<section>
+  <h2>Spoke Type Load Cells <em>(5 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYLF-101" data-cat="spoke-type">
+  <div class="card-hd"><b>DYLF-101</b><small>0–50T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkioiklqjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkioiklqjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioikpqjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkioikpqjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioikqqjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkioikqqjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkioikoqjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkioikoqjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkioiknqjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkioiknqjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLF-102" data-cat="spoke-type">
+  <div class="card-hd"><b>DYLF-102</b><small>0–450T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiojklrjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiojklrjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkioikmmjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkioikmmjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiojkkrjo/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiojkkrjo/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiojkjrjo/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiojkjrjo/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiojkirjo/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiojkirjo/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLF-104" data-cat="spoke-type">
+  <div class="card-hd"><b>DYLF-104</b><small>0–100kN</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiojkqmjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiojkqmjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiojkomjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiojkomjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiojknmjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiojknmjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiojklmjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiojklmjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiojkkmjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiojkkmjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLF-105" data-cat="spoke-type">
+  <div class="card-hd"><b>DYLF-105</b><small>0–500T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiokkmljp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiokkmljp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiokklljq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiokklljq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiokkoljq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiokkoljq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiokkqljq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiokkqljq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiokkpljq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiokkpljq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYLF-106" data-cat="spoke-type">
+  <div class="card-hd"><b>DYLF-106</b><small>0–50T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkjokkkojq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkjokkkojq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjokklojq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjokklojq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjokknojq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjokknojq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjokkqojp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjokkqojp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjokkpojp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjokkpojp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<section>
+  <h2>Shear Beam Load Cells <em>(12 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYX-301" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-301</b><small>0–10T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjopkojjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjopkojjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjopkqjjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjopkqjjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkjopkmjjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkjopkmjjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjopknjjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjopknjjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjopkrkjq/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjopkrkjq/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYX-302" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-302</b><small>0–5T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjomlorjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjomlorjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjoplrmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjoplrmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjopljmjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjopljmjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjoplkmjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjoplkmjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkjopllmjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkjopllmjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYSBS" data-cat="shear-beam">
+  <div class="card-hd"><b>DYSBS</b><small>0–3T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjolonijq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjolonijq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjolooijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjolooijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjoloqijp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjoloqijp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjoloijjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjoloijjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjolopijp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjolopijp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYX-305" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-305</b><small>0–2000kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjolopnjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjolopnjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjolomnjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjolomnjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjolorojq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjolorojq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjoloiojq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjoloiojq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjolojojp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjolojojp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYX-306A" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-306A</b><small>0–2kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklopppqjm/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklopppqjm/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkloppmojm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkloppmojm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkloppjqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkloppjqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkloppkqjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkloppkqjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkloppnqjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkloppnqjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYBW-106" data-cat="shear-beam">
+  <div class="card-hd"><b>DYBW-106</b><small>0–1000kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkooiqnrjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkooiqnrjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooiqlrjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooiqlrjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkooiqkrjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkooiqkrjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoorqpmjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoorqpmjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoorqnmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoorqnmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZX-001" data-cat="shear-beam">
+  <div class="card-hd"><b>DYZX-001</b><small>0–100T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRllrorlpjjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRllrorlpjjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRllrorlrkjo/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRllrorlrkjo/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRllrorlikjo/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRllrorlikjo/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRllrorljkjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRllrorljkjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllrorlnkjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllrorlnkjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZX-002" data-cat="shear-beam">
+  <div class="card-hd"><b>DYZX-002</b><small>0–150T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRilpkiplpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRilpkiplpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRilpkipoqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRilpkipoqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRilpkiprqjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRilpkiprqjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRilpkiplojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRilpkiplojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRilpkiprojq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRilpkiprojq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYBH-102" data-cat="shear-beam">
+  <div class="card-hd"><b>DYBH-102</b><small>1–500T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqlkpojp/9.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqlkpojp/9.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqlkpqjp/8.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqlkpqjp/8.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqlkrpjp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqlkrpjp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqlkpmjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqlkpmjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqnkirjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqnkirjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYBH-103" data-cat="shear-beam">
+  <div class="card-hd"><b>DYBH-103</b><small>0–100T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqikpmjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqikpmjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqiknmjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqiknmjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqikjmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqikjmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqjkrrjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqjkrrjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqjkqrjq/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqjkqrjq/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYBH-101" data-cat="shear-beam">
+  <div class="card-hd"><b>DYBH-101</b><small>0–100T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkooqqmljm/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkooqqmljm/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkooqqpljm/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkooqqpljm/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkooqqqljm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkooqqqljm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkooqqkljp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkooqqkljp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooqqnkjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooqqnkjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYYB-001" data-cat="shear-beam">
+  <div class="card-hd"><b>DYYB-001</b><small>0–500μm/m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRllroojmijq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRllroojmijq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRllroojqljp/yingwen-DYYB-001xilie_01.png" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRllroojqljp/yingwen-DYYB-001xilie_01.png" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkioqjlqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkioqjlqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkooimjpjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkooimjpjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmokmqojm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmokmqojm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Tension Sensors <em>(4 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYZL-101" data-cat="tension">
+  <div class="card-hd"><b>DYZL-101</b><small>1–200kN</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoomprjjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoomprjjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoompnijp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoompnijp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoompjijp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoompjijp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoompiijp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoompiijp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoomplrjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoomplrjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZL-105" data-cat="tension">
+  <div class="card-hd"><b>DYZL-105</b><small>0–3000kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoormonjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoormonjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoormqljp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoormqljp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoormmljp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoormmljp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoorminjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoorminjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoormknjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoormknjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZL-106" data-cat="tension">
+  <div class="card-hd"><b>DYZL-106</b><small>20–300N</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkooimjpjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkooimjpjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkooimipjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkooimipjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkooimmqjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkooimmqjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkooimpqjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkooimpqjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooimlpjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkooimlpjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZL-107" data-cat="tension">
+  <div class="card-hd"><b>DYZL-107</b><small>0–100kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkookmqqjm/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkookmqqjm/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkookmrqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkookmrqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkookmmojm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkookmmojm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkookmiqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkookmiqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkookmjqjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkookmjqjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Miniature Load Cells <em>(5 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYHW-106" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-106</b><small>5–20kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqoljlkjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqoljlkjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoljnkjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoljnkjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqoljokjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqoljokjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqoljkljp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqoljkljp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoljlljp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoljlljp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYHW-108" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-108</b><small>1–100kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqomrrljp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqomrrljp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkqomrqkjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkqomrqkjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqomrnkjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqomrnkjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkqomrlkjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkqomrlkjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkqomrpkjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkqomrpkjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYHW-110" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-110</b><small>1–100kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqokikijq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqokikijq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkqokiiijq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkqokiiijq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqokirijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqokirijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqokiprjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqokiprjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqokijijq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqokijijq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYHW-113" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-113</b><small>0–200kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqooiqpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqooiqpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkqooiqqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkqooiqqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkqooipojp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkqooipojp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqooinojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqooinojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqooijojp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqooijojp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYHW-116" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-116</b><small>0–10T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqorjimjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqorjimjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqorjlqjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkqorjlqjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqorjoqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqorjoqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqorjpqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkqorjpqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqorjjpjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqorjjpjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Capsule Type Load Cells <em>(8 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYMH-101" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-101</b><small>50kg–15T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqoqjrojp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkqoqjrojp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqoqjkojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqoqjkojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqoqjjqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkqoqjjqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqoqjnpjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkqoqjnpjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoqjqpjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkqoqjqpjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-102" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-102</b><small>50kg–10T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmojqpijp/9.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmojqpijp/9.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmojqoijp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmojqoijp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmojqqrjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmojqqrjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmojqlrjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmojqlrjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmojqkrjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmojqkrjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-103" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-103</b><small>0–500kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmoqpjmjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmoqpjmjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmoppirjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmoppirjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBmqKnklqSRlkmoqppmjr/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBmqKnklqSRlkmoqppmjr/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkmoqpomjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkmoqpomjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmoqplmjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmoqplmjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-104" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-104</b><small>0–5T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmorprpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmorprpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkmorpmqjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkmorpmqjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmorppqjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmorppqjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmorpqqjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmorpqqjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmorpoqjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmorpoqjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-105" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-105</b><small>0–2T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmopmmjjm/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkmopmmjjm/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmopmjjjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmopmjjjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmopmkjjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmopmkjjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmopmljjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmopmljjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkmopmnjjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkmopmnjjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-106" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-106</b><small>0–500kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmokmqojm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmokmqojm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmokmiljp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmokmiljp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmokmirjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmokmirjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmojmnqjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmojmnqjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkmojmnkjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkmojmnkjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMH-107" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-107</b><small>0–20kN</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmoqmqjjm/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkmoqmqjjm/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmoqmlijm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkmoqmlijm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmoqmnijm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmoqmnijm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmoqmoijm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkmoqmoijm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmoqmljjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkmoqmljjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYTB-001" data-cat="capsule-type">
+  <div class="card-hd"><b>DYTB-001</b><small>1–200kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBmqKnklqSRlkmopmmpjr/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBmqKnklqSRlkmopmmpjr/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmopmrmjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkmopmrmjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmopmimjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkmopmimjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkmopmkmjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkmopmkmjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkmopmlmjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkmopmlmjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Column Type Load Cells <em>(11 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYZ-100" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-100</b><small>0–500N</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkrqrrkrjo/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkrqrrkrjo/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkrqrrlrjo/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkrqrrlrjo/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkrqrrorjo/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkrqrrorjo/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkrqrrqrjo/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkrqrrqrjo/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkrqrrprjo/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkrqrrprjo/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-101" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-101</b><small>0–2000kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqoomijp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqoomijp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqookjjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqookjjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiqoonjjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkiqoonjjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiqoorkjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiqoorkjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqooiljq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqooiljq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-102" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-102</b><small>0–50kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiqqqrmjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkiqqqrmjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqqqrojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqqqrojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqqqoojp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqqqoojp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqqqqojp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqqqqojp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiqqqpojm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiqqqpojm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-103" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-103</b><small>0–150kN</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqoqlrjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqoqlrjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqnqimjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqnqimjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiqnqkmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiqnqkmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqnqmmjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqnqmmjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiqkqomjp/DSZ-102xiangqingye_01.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkiqkqomjp/DSZ-102xiangqingye_01.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-011" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-011</b><small>0–1000T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqkpomjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqkpomjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqlplijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqlplijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqlpqijp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiqlpqijp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqlpmijp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkiqlpmijp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiqlpqjjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkiqlpqjjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-012" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-012</b><small>5–500T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjqnmjljp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjqnmjljp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjqnmikjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkjqnmikjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqnmmjjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqnmmjjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjqnmojjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjqnmojjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqnmnojp/DSZ-100xiangqingye_01.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqnmnojp/DSZ-100xiangqingye_01.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-013" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-013</b><small>0–30T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiqippijp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkiqippijp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiqiplijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkiqiplijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqipqrjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkiqipqrjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqipojjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqipojjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqjpjnjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkiqjpjnjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-014" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-014</b><small>0–100T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqpimqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqpimqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjqpikpjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkjqpikpjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqpippjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqpippjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjqpimpjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjqpimpjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjqpijpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkjqpijpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYZ-015" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-015</b><small>0–3500T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllromkrrjq/C-_Users_Administrator_Desktop_dulizhanshangchuanxinpin_zhushi_DYC611_DYB.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllromkrrjq/C-_Users_Administrator_Desktop_dulizhanshangchuanxinpin_zhushi_DYC611_DYB.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRllromkpkjp/yingwen-DYZ-015xilie_01.png" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRllromkpkjp/yingwen-DYZ-015xilie_01.png" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkioiklqjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkioiklqjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiojkqmjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkiojkqmjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYHX-001" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-001</b><small>0–100kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjqrjmojp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkjqrjmojp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjqrjpojq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkjqrjpojq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqrjqojq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkjqrjqojq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjqrjnojq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkjqrjnojq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjqrjlojq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjqrjlojq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYRTN" data-cat="column-type">
+  <div class="card-hd"><b>DYRTN</b><small>1–470T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRllrolkjpjq/C-_Users_Administrator_Desktop_dulizhanshangchuanxinpin_zhushi_DYC611_DYB.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRllrolkjpjq/C-_Users_Administrator_Desktop_dulizhanshangchuanxinpin_zhushi_DYC611_DYB.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllronkopjp/yingwen-DYGDxilie_01.png" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllronkopjp/yingwen-DYGDxilie_01.png" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkionimqjp/8.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjolopnjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkjolopnjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoomprjjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoomprjjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<section>
+  <h2>Multi-Axial Force Sensors <em>(3 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYDW-001" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-001</b><small>0–1000kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqljnjjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqljnjjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqljqijq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqljqijq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqljmijp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqljmijp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqljrjjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqljrjjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqljljjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqljljjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYDW-003" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-003</b><small>1–50N.m, 50–1000N</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqijiqjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqijiqjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqijopjp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqijopjp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqijnpjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqijnpjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqijqqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqijqqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqijkqjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqijkqjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYDW-y74" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y74</b><small>5000N, 100N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqokqmjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqokqmjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqokomjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqokomjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqoknmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqoknmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqokopjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqokopjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqokmmjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqokmmjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Weighing Modules <em>(7 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYMK-001" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-001</b><small>0–15T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqpllpjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqpllpjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqmlnijp/7.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqmlnijp/7.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqpljpjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqpljpjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqplqpjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqplqpjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqplqmjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqplqmjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMK-002" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-002</b><small>0–100T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqknmijp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqknmijp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqknjjjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqknjjjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqknqjjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqknqjjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqknmjjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqknmjjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqknrkjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqknrkjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMK-003" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-003</b><small>0–5T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqonqmjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqonqmjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqonmmjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqonmmjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqqnnrjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqqnnrjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqqnqrjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqqnqrjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqqnmrjp/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqqnmrjp/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMK-004" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-004</b><small>10–300kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRnkkioqnmjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRnkkioqnmjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRnkkioqomjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRnkkioqomjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRnkkioqpmjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRnkkioqpmjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRnkkioqmmjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRnkkioqmmjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRnkkiqqrrjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRnkkiqqrrjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMK-005" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-005</b><small>0–40T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRllqmkqnnjm/1.png" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRllqmkqnnjm/1.png" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRllqmkqonjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRllqmkqonjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRllqmkqpnjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRllqmkqpnjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRllqmkqmnjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRllqmkqmnjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllqmkqqnjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRllqmkqqnjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYMK-006" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-006</b><small>0–500kg</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqjoqijp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqjoqijp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqjorjjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqjorjjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqjoijjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqjoijjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqjokjjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqjokjjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqjoljjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqjoljjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYCW" data-cat="weighing-module">
+  <div class="card-hd"><b>DYCW</b><small>0–20T</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqkooijp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqkooijp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqloonjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqloonjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqlopnjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqlopnjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqloipjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqloipjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqlokpjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqlokpjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div>
+</div></div>
+</section>
+<section>
+  <h2>Strain Torque Sensors <em>(0 products)</em></h2>
+  <div class="grid"></div>
+</section>
+<section>
+  <h2>Dynamic Torque Sensors <em>(7 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DYN-200" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-200</b><small>0–20000N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqmopijp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqmopijp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqmomijm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqmomijm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqmojjjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqmojjjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqmokjjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqmokjjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqmoljjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlklqmoljjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-200 Pro" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-200 Pro</b><small>0–20000N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqpmkojm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqpmkojm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqpmlojm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlklqpmlojm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqpmiojp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqpmiojp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqpmrojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqpmrojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqpmqnjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqpmqnjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-201D" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-201D</b><small>0–1000N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqlmnpjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqlmnpjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqlmoqjm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqlmoqjm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqlmmqjm/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlklqlmmqjm/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqlmkpjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlklqlmkpjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqlmlpjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlklqlmlpjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-205" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-205</b><small>0–5kN.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlknqjriijq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlknqjriijq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlknqjrlijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlknqjrlijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlknqjrqijq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlknqjrqijq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlknqjrpijq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlknqjrpijq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqjrjjjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqjrjjjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-207" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-207</b><small>0–200N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlknqnrrqjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlknqnrrqjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqnrlqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqnrlqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlknqnroqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlknqnroqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqnrrpjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqnrrpjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqnrjpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqnrjpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-210" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-210</b><small>0–300000N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqiqnqjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlklqiqnqjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqiqqqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlklqiqqqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqiqpqjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlklqiqpqjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqiqrpjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlklqiqrpjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqiqjpjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlklqiqjpjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DYN-502" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-502</b><small>0–250000N.m</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlknqrimijq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlknqrimijq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlknqripijq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlknqripijq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlknqriqijq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlknqriqijq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqrilijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlknqrilijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqriiijo/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqriiijo/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<section>
+  <h2>Junction Boxes & Transmitters <em>(4 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DY500" data-cat="junction">
+  <div class="card-hd"><b>DY500</b><small>Junction box</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqpiqqjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqpiqqjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqpiiqjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqpiiqjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqpiqojp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqpiqojp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoqpinojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lqBpqKnklqSRlkoqpinojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqpilojp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqpilojp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY510" data-cat="junction">
+  <div class="card-hd"><b>DY510</b><small>Junction box</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqrjlnjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqrjlnjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqrjnnjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqrjnnjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqrjonjp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqrjonjp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqrjqnjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqrjqnjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqrjpnjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqrjpnjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="X501" data-cat="junction">
+  <div class="card-hd"><b>X501</b><small>Transmitter</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqkjjrjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqkjjrjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqkjqrjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqkjqrjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqkjkijq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqkjkijq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqkjrjjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqkjrjjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqkjljjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqkjljjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY094" data-cat="junction">
+  <div class="card-hd"><b>DY094</b><small>Transmitter</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmjmojm/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmjmojm/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqmjiqjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqmjiqjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqmjoqjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqmjoqjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmjqpjm/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmjqpjm/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqmjopjm/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqmjopjm/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<section>
+  <h2>Digital Indicators & Controllers <em>(5 products)</em></h2>
+  <div class="grid"><div class="card" data-name="DY054" data-cat="indicators">
+  <div class="card-hd"><b>DY054</b><small>Digital indicator</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqkrmmjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqkrmmjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqlrirjq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqlrirjq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqlrkrjq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqlrkrjq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqlrlijq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqlrlijq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqlrlljq/DY054-xiangqingye-xin_01.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqlrlljq/DY054-xiangqingye-xin_01.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY056" data-cat="indicators">
+  <div class="card-hd"><b>DY056</b><small>Digital indicator</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqmrjojp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqmrjojp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmriojp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqmriojp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqmrkojp/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqmrkojp/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqmrlojp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/loBpqKnklqSRlkoqmrlojp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqmriqjp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqmriqjp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY800" data-cat="indicators">
+  <div class="card-hd"><b>DY800</b><small>Digital indicator</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqriqmjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqriqmjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqrikmjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lrBpqKnklqSRlkoqrikmjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqiirrjo/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqiirrjo/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqiikrjq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/ljBpqKnklqSRlkoqiikrjq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqiilrjq/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lkBpqKnklqSRlkoqiilrjq/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY810" data-cat="indicators">
+  <div class="card-hd"><b>DY810</b><small>Digital indicator</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqliqrjq/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlkoqliqrjq/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqliiijq/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlkoqliiijq/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqlijijq/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lnBpqKnklqSRlkoqlijijq/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqlinijq/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlkoqlinijq/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqlipijp/5.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlkoqlipijp/5.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div><div class="card" data-name="DY920" data-cat="indicators">
+  <div class="card-hd"><b>DY920</b><small>Digital indicator</small></div>
+  <div class="img-row"><div class="opt selected" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlknqqqikjp/4.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/llBpqKnklqSRlknqqqikjp/4.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#1</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqqqqjjp/2.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lmBpqKnklqSRlknqqqqjjp/2.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#2</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqqqmjjm/3.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqqqmjjm/3.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#3</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlknqqqojjp/1.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/lpBpqKnklqSRlknqqqojjp/1.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#4</span>
+</div><div class="opt" data-url="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqqqpkjm/6.jpg" onclick="pick(this)">
+  <img src="https://iqrorwxhlqmmlq5m-static.micyjz.com/cloud/liBpqKnklqSRlknqqqpkjm/6.jpg" loading="lazy" onerror="this.closest('.opt').classList.add('err')">
+  <span>#5</span>
+</div></div>
+</div></div>
+</section>
+<script>
+function pick(el){
+  el.closest('.img-row').querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function exportAll(){
+  const lines=[];
+  document.querySelectorAll('.card').forEach(c=>{
+    const sel=c.querySelector('.opt.selected');
+    if(sel) lines.push(c.dataset.cat+'|'+c.dataset.name+'|'+sel.dataset.url);
+  });
+  const blob=new Blob([lines.join('\n')],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='grv_selections.txt';
+  a.click();
+}
+</script>
+
+<section style="opacity:0.4">
+  <h2>No Image Available <em>(117 products)</em></h2>
+  <p style="font-size:.75rem;color:rgba(255,255,255,.3);margin-bottom:12px">Images not found for these products</p>
+  <div class="grid">
+<div class="card" data-name="DYLY-108" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-108</b><small>0–200kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYLY-108M" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-108M</b><small>0–200kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYLY-109" data-cat="s-type">
+  <div class="card-hd"><b>DYLY-109</b><small>0–10kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYTSH" data-cat="s-type">
+  <div class="card-hd"><b>DYTSH</b><small>200kg–3T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHLJ" data-cat="shear-beam">
+  <div class="card-hd"><b>DYHLJ</b><small>0–5T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYQ-101" data-cat="shear-beam">
+  <div class="card-hd"><b>DYQ-101</b><small>1–30T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYWL-001" data-cat="shear-beam">
+  <div class="card-hd"><b>DYWL-001</b><small>10–100N</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYX-306B" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-306B</b><small>0–40kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYX-306C" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-306C</b><small>0–350kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYX-306D" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-306D</b><small>0–500kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYX-307" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-307</b><small>50–1000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYX-309" data-cat="shear-beam">
+  <div class="card-hd"><b>DYX-309</b><small>0–10kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYYB-002" data-cat="shear-beam">
+  <div class="card-hd"><b>DYYB-002</b><small>0–50kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZC-055" data-cat="shear-beam">
+  <div class="card-hd"><b>DYZC-055</b><small>0–20T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZHL" data-cat="tension">
+  <div class="card-hd"><b>DYZHL</b><small>0–1000N</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZL-104" data-cat="tension">
+  <div class="card-hd"><b>DYZL-104</b><small>0–200kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZL-108" data-cat="tension">
+  <div class="card-hd"><b>DYZL-108</b><small>0–50kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHW-112" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-112</b><small>50–500N</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHW-120" data-cat="miniature">
+  <div class="card-hd"><b>DYHW-120</b><small>0–2000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMH-108" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-108</b><small>0–1000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMH-108D" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-108D</b><small>0–5kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMH-109" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-109</b><small>2.5–20T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMH-113" data-cat="capsule-type">
+  <div class="card-hd"><b>DYMH-113</b><small>0–50kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYPB-001" data-cat="capsule-type">
+  <div class="card-hd"><b>DYPB-001</b><small>1–5T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYPB-002" data-cat="capsule-type">
+  <div class="card-hd"><b>DYPB-002</b><small>1–3T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYPB-003" data-cat="capsule-type">
+  <div class="card-hd"><b>DYPB-003</b><small>1–5T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYTB-002" data-cat="capsule-type">
+  <div class="card-hd"><b>DYTB-002</b><small>1–200kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="D620" data-cat="column-type">
+  <div class="card-hd"><b>D620</b><small>Column type</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHX-002" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-002</b><small>5–50T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHX-002M" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-002M</b><small>30–500kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHX-003" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-003</b><small>0–5000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHX-003M" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-003M</b><small>0–5000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHX-004" data-cat="column-type">
+  <div class="card-hd"><b>DYHX-004</b><small>0–200kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-016" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-016</b><small>3–30T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-018" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-018</b><small>0–200T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-104" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-104</b><small>0–100kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-105" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-105</b><small>0–3000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-106" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-106</b><small>0–50kN</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-107" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-107</b><small>0–200kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-108" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-108</b><small>0–40T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-109" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-109</b><small>0–40T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZ-13E" data-cat="column-type">
+  <div class="card-hd"><b>DYZ-13E</b><small>0–50kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-002" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-002</b><small>3–60N.m, 100–2000N</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-004" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-004</b><small>5–100kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-005" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-005</b><small>100–5000N</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-006" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-006</b><small>5–100kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-007" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-007</b><small>0–1000kg</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-008" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-008</b><small>300N, 10N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-009" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-009</b><small>10kN/750N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y125" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y125</b><small>20kN, 500N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y200" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y200</b><small>100kN, 5000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y25" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y25</b><small>20–100N, 0.5–5N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y45" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y45</b><small>20–200N, 0.5–5N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y80" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y80</b><small>500N, 10N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDW-y82" data-cat="multi-axial">
+  <div class="card-hd"><b>DYDW-y82</b><small>500N, 20N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYFW" data-cat="weighing-module">
+  <div class="card-hd"><b>DYFW</b><small>0–20T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYFWC" data-cat="weighing-module">
+  <div class="card-hd"><b>DYFWC</b><small>0–20T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMK-007" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-007</b><small>0–10T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYMK-008" data-cat="weighing-module">
+  <div class="card-hd"><b>DYMK-008</b><small>50T</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-101" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-101</b><small>0–10000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-102" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-102</b><small>0–200N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-103" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-103</b><small>0–3000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-104" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-104</b><small>0–150N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-105" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-105</b><small>0–2000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-106" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-106</b><small>0.1–5000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-107" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-107</b><small>0–1000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-108" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-108</b><small>0.2–5kN.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-110" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-110</b><small>0–3000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DXJN-111" data-cat="strain-torque">
+  <div class="card-hd"><b>DXJN-111</b><small>0–10000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYDC-001" data-cat="strain-torque">
+  <div class="card-hd"><b>DYDC-001</b><small>400μɛ</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYZY-001" data-cat="strain-torque">
+  <div class="card-hd"><b>DYZY-001</b><small>3000μɛ</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="Inclination Detection System" data-cat="strain-torque">
+  <div class="card-hd"><b>Inclination Detection System</b><small>Inclination sensor</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-202" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-202</b><small>0.1–1kN.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-203" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-203</b><small>0–3000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-204" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-204</b><small>0–5N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-206" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-206</b><small>0–600N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-208" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-208</b><small>0–1000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-209" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-209</b><small>0–30000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-210MU" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-210MU</b><small>Dynamic torque sensor</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-212" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-212</b><small>0–300kN.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-TA8" data-cat="dynamic-torque">
+  <div class="card-hd"><b>DYN-TA8</b><small>0–10000N.m</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="BSQ-001" data-cat="junction">
+  <div class="card-hd"><b>BSQ-001</b><small>Junction box</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="D530" data-cat="junction">
+  <div class="card-hd"><b>D530</b><small>Weighing transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DR304" data-cat="junction">
+  <div class="card-hd"><b>DR304</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYFV12" data-cat="junction">
+  <div class="card-hd"><b>DYFV12</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYJXH-S4" data-cat="junction">
+  <div class="card-hd"><b>DYJXH-S4</b><small>Junction box</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYTX-101" data-cat="junction">
+  <div class="card-hd"><b>DYTX-101</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="Four-Channel Weighing Transmitter" data-cat="junction">
+  <div class="card-hd"><b>Four-Channel Weighing Transmitter</b><small>Weighing transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="X503" data-cat="junction">
+  <div class="card-hd"><b>X503</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="X508A" data-cat="junction">
+  <div class="card-hd"><b>X508A</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="X508B" data-cat="junction">
+  <div class="card-hd"><b>X508B</b><small>Transmitter</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="700WC" data-cat="indicators">
+  <div class="card-hd"><b>700WC</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="CH6" data-cat="indicators">
+  <div class="card-hd"><b>CH6</b><small>Controller</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="D740 Touch Screen" data-cat="indicators">
+  <div class="card-hd"><b>D740 Touch Screen</b><small>Touch screen indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY054N" data-cat="indicators">
+  <div class="card-hd"><b>DY054N</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY054W" data-cat="indicators">
+  <div class="card-hd"><b>DY054W</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY055" data-cat="indicators">
+  <div class="card-hd"><b>DY055</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY2025" data-cat="indicators">
+  <div class="card-hd"><b>DY2025</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY220" data-cat="indicators">
+  <div class="card-hd"><b>DY220</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY220B" data-cat="indicators">
+  <div class="card-hd"><b>DY220B</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY300" data-cat="indicators">
+  <div class="card-hd"><b>DY300</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY300 MFC" data-cat="indicators">
+  <div class="card-hd"><b>DY300 MFC</b><small>Multi-function controller</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY300A" data-cat="indicators">
+  <div class="card-hd"><b>DY300A</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY310" data-cat="indicators">
+  <div class="card-hd"><b>DY310</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY3190" data-cat="indicators">
+  <div class="card-hd"><b>DY3190</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY320" data-cat="indicators">
+  <div class="card-hd"><b>DY320</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY330" data-cat="indicators">
+  <div class="card-hd"><b>DY330</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DY6001" data-cat="indicators">
+  <div class="card-hd"><b>DY6001</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYCHB" data-cat="indicators">
+  <div class="card-hd"><b>DYCHB</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYCSM" data-cat="indicators">
+  <div class="card-hd"><b>DYCSM</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYHB" data-cat="indicators">
+  <div class="card-hd"><b>DYHB</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="DYN-303" data-cat="indicators">
+  <div class="card-hd"><b>DYN-303</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="LN96A" data-cat="indicators">
+  <div class="card-hd"><b>LN96A</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="R305" data-cat="indicators">
+  <div class="card-hd"><b>R305</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="SSR21" data-cat="indicators">
+  <div class="card-hd"><b>SSR21</b><small>Solid state relay</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="XS05" data-cat="indicators">
+  <div class="card-hd"><b>XS05</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+<div class="card" data-name="XSB2" data-cat="indicators">
+  <div class="card-hd"><b>XSB2</b><small>Digital indicator</small></div>
+  <div class="no-match">No image found</div>
+</div>
+  </div>
+</section>
