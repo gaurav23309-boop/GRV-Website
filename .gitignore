@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Temp working files
+temp_s_type/
+brochure_images/
+temp/
+!temp/.gitkeep
+
+# Large archives
+*.zip
+
+# Office docs (track selectively if needed)
+*.pptx
+*.docx
+
+# CAD files (large, binary)
+*.STEP
+
+# Environment / secrets
+.env
+.env.local
+
+# Node
+node_modules/
+
+# High-res originals (too large for git)
+# Products dir has images >40MB — use Git LFS or exclude
+# products/DYLY-102.png  (42MB)
