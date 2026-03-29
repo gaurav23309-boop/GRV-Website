@@ -86,6 +86,9 @@ img{max-width:100%;display:block}
 .quote-success svg{width:48px;height:48px;stroke:var(--teal);margin:0 auto 12px}
 .quote-success h4{font-family:var(--font-h);color:var(--pure-white);font-size:1rem;margin-bottom:4px}
 .quote-success p{font-size:.82rem;color:rgba(255,255,255,.5)}
+/* Mobile-only fixed Request a Quote bar — hidden on desktop */
+.mobile-quote-cta{display:none}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
 .hamburger span{width:22px;height:2px;background:var(--pure-white);border-radius:2px;transition:.3s}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -412,9 +415,16 @@ img{max-width:100%;display:block}
     background:none !important;
   }
 
-  /* CTA — separate row below tabs, full width, no overlap */
-  .nav-cta-wrap{width:100%;order:4;display:flex;justify-content:center;padding:6px 12px 8px !important;margin:0 !important;background:rgba(10,22,40,.95);border-top:1px solid rgba(255,255,255,.06);flex-shrink:0 !important;position:relative !important}
-  .nav-cta{font-size:.72rem !important;padding:8px 20px !important;border-radius:8px !important;width:auto}
+  /* CTA — hide from nav on mobile; use the fixed mobile CTA instead */
+  .nav-cta-wrap{display:none !important}
+
+  /* Fixed mobile Request a Quote button — always visible at bottom */
+  .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);justify-content:center}
+  .mobile-quote-cta .mob-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:none;border-radius:12px;background:var(--teal);color:var(--navy);font-family:var(--font-h);font-weight:700;font-size:.92rem;cursor:pointer;transition:.3s var(--ease);box-shadow:0 4px 20px rgba(0,191,166,.3)}
+
+  /* Adjust WhatsApp FAB and body padding for fixed CTA bar */
+  .wa-fab{bottom:calc(70px + env(safe-area-inset-bottom,0px)) !important}
+  body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
 
   /* Hide hamburger — tabs are visible */
   .hamburger{display:none !important}
@@ -489,10 +499,8 @@ img{max-width:100%;display:block}
 
   /* Hero proof */
   .hero-proof{padding:12px 0}
-  .proof-inner{gap:10px;flex-wrap:nowrap;justify-content:center;padding:0 12px}
-  .proof-item{font-size:.62rem;gap:4px;min-width:0;justify-content:center;white-space:nowrap}
-  .proof-icon{width:22px !important;height:22px !important;flex-shrink:0}
-  .proof-icon svg{width:12px !important;height:12px !important}
+  .bottom-proof .proof-inner{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;padding:0 16px}
+  .bottom-proof .proof-item{font-size:.72rem;gap:6px;justify-content:flex-start;white-space:nowrap}
   .proof-icon{width:26px;height:26px}
   .proof-icon svg{width:13px;height:13px}
 
@@ -545,9 +553,9 @@ img{max-width:100%;display:block}
   .hero{padding:90px 0 60px}
   .hero h1{font-size:clamp(1.4rem,6vw,1.7rem)}
   .hero-desc{font-size:.86rem}
-  .proof-item{min-width:0;justify-content:center;font-size:.56rem;gap:3px}
-  .proof-icon{width:18px !important;height:18px !important}
-  .proof-icon svg{width:10px !important;height:10px !important}
+  .bottom-proof .proof-item{font-size:.65rem;gap:4px}
+  .bottom-proof .proof-icon{width:22px;height:22px}
+  .bottom-proof .proof-icon svg{width:11px;height:11px}
   .nav-logo img{height:36px}
   .nav.scrolled .nav-logo img{height:32px}
   .nav-links li:not(:last-child) a,
@@ -906,6 +914,14 @@ img{max-width:100%;display:block}
 </div>
 </div>
 
+<!-- MOBILE REQUEST A QUOTE BAR -->
+<div class="mobile-quote-cta" id="mobileQuoteCta">
+  <button class="mob-cta-btn" id="mobQuoteBtn">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Request a Quote
+  </button>
+</div>
+
 <!-- WHATSAPP FAB -->
 <a href="https://wa.me/919008300172" class="wa-fab" target="_blank" title="Chat on WhatsApp">
 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
@@ -1000,12 +1016,15 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hambur
 
   closeBtn.addEventListener('click',function(){
     dd.classList.remove('open');
+    document.body.style.overflow='';
   });
 
   // Close on outside click
   document.addEventListener('click',function(e){
-    if(!dd.contains(e.target)&&e.target!==cta){
+    var mobBtn=document.getElementById('mobQuoteBtn');
+    if(!dd.contains(e.target)&&e.target!==cta&&e.target!==mobBtn){
       dd.classList.remove('open');
+      document.body.style.overflow='';
     }
   });
 
@@ -1042,6 +1061,20 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hambur
       alert('Something went wrong. Please try again.');
     });
   });
+})();
+
+// Mobile Request a Quote button — opens the same quote dropdown
+(function(){
+  var mobBtn=document.getElementById('mobQuoteBtn');
+  var dd=document.getElementById('quoteDropdown');
+  if(mobBtn&&dd){
+    mobBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      dd.classList.toggle('open');
+      document.body.style.overflow=dd.classList.contains('open')?'hidden':'';
+    });
+  }
 })();
 
 // Interactive menu tabs
