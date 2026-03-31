@@ -33,8 +33,15 @@ a,button,input[type="submit"],[role="button"]{touch-action:manipulation}
   --font-mono:'IBM Plex Mono',monospace;
   --ease:cubic-bezier(.25,.46,.45,.94);
 }
-@keyframes liquidMetal{0%{background-position:0% 50%}25%{background-position:50% 100%}50%{background-position:100% 50%}75%{background-position:50% 0%}100%{background-position:0% 50%}}
-@keyframes metalShine{0%{left:-100%}100%{left:200%}}
+@property --gradient-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@property --gradient-angle-offset{syntax:"<angle>";initial-value:0deg;inherits:false}
+@property --gradient-percent{syntax:"<percentage>";initial-value:5%;inherits:false}
+@property --gradient-shine{syntax:"<color>";initial-value:white;inherits:false}
+@keyframes shinyRotate{to{--gradient-angle:360deg}}
+@keyframes shimmer{to{rotate:360deg}}
+@keyframes breathe{from,to{scale:1}50%{scale:1.2}}
+@keyframes shinyShimmer{to{rotate:360deg}}
+@keyframes shinyBreathe{from,to{scale:1}50%{scale:1.2}}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--font-b);background:var(--white);color:var(--graphite);overflow-x:hidden;line-height:1.6;font-size:16px}
 a{text-decoration:none;color:inherit}
@@ -62,11 +69,17 @@ img{max-width:100%;display:block}
 .nav-links li.active:not(:last-child) a::after{transform:translateX(-50%) scaleX(1)}
 @keyframes navBounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}60%{transform:translateY(0)}80%{transform:translateY(-1px)}}
 .nav-links li.bounce:not(:last-child) a{animation:navBounce .45s ease}
-.nav-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:100px;border:none;font-weight:500 !important;font-size:.8rem;color:#999 !important;letter-spacing:.3px;cursor:pointer;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 100%);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.5),0 4px 8px rgba(0,0,0,.3),0 8px 16px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s var(--ease);opacity:1 !important;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.8);z-index:1}
-.nav-cta::before{content:'';position:absolute;inset:-1.5px;z-index:-1;background:linear-gradient(var(--metal-angle,325deg),#1E88E5,#43A047,#E53935,#1E88E5,#43A047);background-size:300% 300%;animation:liquidMetal 6s ease infinite;border-radius:100px;opacity:.7}
-.nav-cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),rgba(255,255,255,.1),rgba(255,255,255,.06),transparent);transform:skewX(-20deg);animation:metalShine 4s ease-in-out infinite;pointer-events:none;z-index:2}
-.nav-cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 20px rgba(30,136,229,.25),0 0 20px rgba(67,160,71,.2),0 0 20px rgba(229,57,53,.2),0 8px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1)}
-.nav-cta:active{transform:translateY(1px) scale(.98);box-shadow:0 0 0 1px rgba(255,255,255,.06),inset 0 2px 4px rgba(0,0,0,.4),0 2px 4px rgba(0,0,0,.3)}
+.nav-cta{--shiny-cta-bg:#000;--shiny-cta-bg-subtle:#1a1818;--shiny-cta-highlight:#00BFA6;--shiny-cta-highlight-subtle:#00D4FF;--shadow-size:2px;isolation:isolate;position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:360px;border:1px solid transparent;font-weight:500 !important;font-size:.8rem;color:#fff !important;letter-spacing:.3px;cursor:pointer;background:linear-gradient(var(--shiny-cta-bg),var(--shiny-cta-bg)) padding-box,conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),transparent,var(--shiny-cta-highlight) var(--gradient-percent),var(--gradient-shine) calc(var(--gradient-percent)*2),var(--shiny-cta-highlight) calc(var(--gradient-percent)*3),transparent calc(var(--gradient-percent)*4)) border-box;box-shadow:inset 0 0 0 1px var(--shiny-cta-bg-subtle);transition:800ms cubic-bezier(.25,1,.5,1);transition-property:--gradient-angle-offset,--gradient-percent,--gradient-shine;opacity:1 !important;animation:shinyRotate 3s linear infinite}
+.nav-cta::before,.nav-cta::after,.nav-cta span::before{content:'';pointer-events:none;position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:-1}
+.nav-cta::before{--size:calc(100% - var(--shadow-size)*3);--position:2px;--space:calc(var(--position)*2);width:var(--size);height:var(--size);background:radial-gradient(circle at var(--position) var(--position),white calc(var(--position)/4),transparent 0) padding-box;background-size:var(--space) var(--space);background-repeat:space;mask-image:conic-gradient(from calc(var(--gradient-angle) + 45deg),black,transparent 10% 90%,black);border-radius:inherit;opacity:.4}
+.nav-cta::after{width:100%;aspect-ratio:1;background:linear-gradient(-50deg,transparent,var(--shiny-cta-highlight),transparent);mask-image:radial-gradient(circle at bottom,transparent 40%,black);opacity:.6;animation:shimmer 3s linear infinite,shimmer calc(3s/.4) reverse paused;animation-composition:add}
+.nav-cta span{position:relative;z-index:1}
+.nav-cta span::before{--size:calc(100% + 1rem);width:var(--size);height:var(--size);box-shadow:inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);opacity:0;transition:opacity 800ms cubic-bezier(.25,1,.5,1);animation:4.5s breathe linear infinite}
+.nav-cta,.nav-cta::before{animation:shinyRotate 3s linear infinite,shinyRotate calc(3s/.4) reverse paused;animation-composition:add}
+.nav-cta:hover,.nav-cta:focus-visible{--gradient-percent:20%;--gradient-angle-offset:95deg;--gradient-shine:var(--shiny-cta-highlight-subtle)}
+.nav-cta:is(:hover,:focus-visible),.nav-cta:is(:hover,:focus-visible)::before,.nav-cta:is(:hover,:focus-visible)::after{animation-play-state:running}
+.nav-cta:is(:hover,:focus-visible) span::before{opacity:1}
+.nav-cta:active{translate:0 1px}
 .nav-cta-wrap{position:relative;overflow:visible;border-radius:12px}
 .quote-dropdown{position:absolute;top:calc(100% + 12px);right:0;width:340px;background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;box-shadow:0 20px 60px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;z-index:1001}
 .quote-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
@@ -436,9 +449,12 @@ img{max-width:100%;display:block}
 
   /* Fixed mobile Request a Quote button — always visible at bottom */
   .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);justify-content:center}
-  .mobile-quote-cta .mob-cta-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:none;border-radius:100px;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 100%);color:#999;font-family:var(--font-h);font-weight:500;font-size:.92rem;cursor:pointer;transition:.3s var(--ease);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.5),0 4px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.8);z-index:1}
-.mobile-quote-cta .mob-cta-btn::before{content:'';position:absolute;inset:-1.5px;z-index:-1;background:linear-gradient(325deg,#1E88E5,#43A047,#E53935,#1E88E5,#43A047);background-size:300% 300%;animation:liquidMetal 6s ease infinite;border-radius:100px;opacity:.7}
-.mobile-quote-cta .mob-cta-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),rgba(255,255,255,.1),rgba(255,255,255,.06),transparent);transform:skewX(-20deg);animation:metalShine 4s ease-in-out infinite;pointer-events:none;z-index:2}
+  .mobile-quote-cta .mob-cta-btn{--shiny-cta-bg:#000;--shiny-cta-bg-subtle:#1a1818;--shiny-cta-highlight:#00BFA6;--shiny-cta-highlight-subtle:#00D4FF;--shadow-size:2px;isolation:isolate;position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:1px solid transparent;border-radius:360px;background:linear-gradient(var(--shiny-cta-bg),var(--shiny-cta-bg)) padding-box,conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),transparent,var(--shiny-cta-highlight) var(--gradient-percent),var(--gradient-shine) calc(var(--gradient-percent)*2),var(--shiny-cta-highlight) calc(var(--gradient-percent)*3),transparent calc(var(--gradient-percent)*4)) border-box;box-shadow:inset 0 0 0 1px var(--shiny-cta-bg-subtle);color:#fff;font-family:var(--font-h);font-weight:500;font-size:.92rem;cursor:pointer;transition:800ms cubic-bezier(.25,1,.5,1);transition-property:--gradient-angle-offset,--gradient-percent,--gradient-shine;animation:shinyRotate 3s linear infinite,shinyRotate calc(3s/.4) reverse paused;animation-composition:add}
+  .mobile-quote-cta .mob-cta-btn::before,.mobile-quote-cta .mob-cta-btn::after,.mobile-quote-cta .mob-cta-btn span::before{content:'';pointer-events:none;position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:-1}
+  .mobile-quote-cta .mob-cta-btn::before{--size:calc(100% - var(--shadow-size)*3);--position:2px;--space:calc(var(--position)*2);width:var(--size);height:var(--size);background:radial-gradient(circle at var(--position) var(--position),white calc(var(--position)/4),transparent 0) padding-box;background-size:var(--space) var(--space);background-repeat:space;mask-image:conic-gradient(from calc(var(--gradient-angle) + 45deg),black,transparent 10% 90%,black);border-radius:inherit;opacity:.4;animation:shinyRotate 3s linear infinite,shinyRotate calc(3s/.4) reverse paused;animation-composition:add}
+  .mobile-quote-cta .mob-cta-btn::after{width:100%;aspect-ratio:1;background:linear-gradient(-50deg,transparent,var(--shiny-cta-highlight),transparent);mask-image:radial-gradient(circle at bottom,transparent 40%,black);opacity:.6;animation:shimmer 3s linear infinite,shimmer calc(3s/.4) reverse paused;animation-composition:add}
+  .mobile-quote-cta .mob-cta-btn span{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px}
+  .mobile-quote-cta .mob-cta-btn:active{translate:0 1px}
 
   /* Adjust WhatsApp FAB and body padding for fixed CTA bar */
   .wa-fab{bottom:calc(70px + env(safe-area-inset-bottom,0px)) !important}
@@ -608,7 +624,7 @@ img{max-width:100%;display:block}
     <li><a href="#reviews">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="nav-cta-wrap">
-      <a href="#" class="nav-cta" id="quoteCta">Request a Quote</a>
+      <a href="#" class="nav-cta" id="quoteCta"><span>Request a Quote</span></a>
       <div class="quote-dropdown" id="quoteDropdown">
         <button class="quote-close" id="quoteClose">&times;</button>
         <h3>Request a Quote</h3>
@@ -994,8 +1010,10 @@ img{max-width:100%;display:block}
 <!-- MOBILE REQUEST A QUOTE BAR -->
 <div class="mobile-quote-cta" id="mobileQuoteCta">
   <button class="mob-cta-btn" id="mobQuoteBtn">
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    Request a Quote
+    <span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Request a Quote
+    </span>
   </button>
 </div>
 
