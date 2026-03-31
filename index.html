@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -37,7 +40,8 @@ a,button,input[type="submit"],[role="button"]{touch-action:manipulation}
   --rb-speed:2s;
 }
 @keyframes rainbow{0%{background-position:0%}100%{background-position:200%}}
-@keyframes shinyShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes liquidMetal{0%{background-position:0% 50%}25%{background-position:50% 100%}50%{background-position:100% 50%}75%{background-position:50% 0%}100%{background-position:0% 50%}}
+@keyframes metalShine{0%{left:-100%}100%{left:200%}}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--font-b);background:var(--white);color:var(--graphite);overflow-x:hidden;line-height:1.6;font-size:16px}
 a{text-decoration:none;color:inherit}
@@ -65,9 +69,11 @@ img{max-width:100%;display:block}
 .nav-links li.active:not(:last-child) a::after{transform:translateX(-50%) scaleX(1)}
 @keyframes navBounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}60%{transform:translateY(0)}80%{transform:translateY(-1px)}}
 .nav-links li.bounce:not(:last-child) a{animation:navBounce .45s ease}
-.nav-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:7px 18px;border-radius:10px;border:none;font-weight:600 !important;font-size:.8rem;color:#fff !important;cursor:pointer;background:linear-gradient(325deg,#1E88E5 0%,#43A047 30%,#E53935 60%,#1E88E5 90%);background-size:280% auto;animation:shinyShift 4s ease infinite;box-shadow:0 0 20px rgba(30,136,229,.4),0 0 20px rgba(67,160,71,.3),0 0 20px rgba(229,57,53,.3),0 5px 5px -1px rgba(30,136,229,.2),inset 2px 2px 6px rgba(130,200,255,.3),inset -2px -2px 6px rgba(229,57,53,.2);transition:transform .3s var(--ease),box-shadow .3s var(--ease),background-position .7s;opacity:1 !important}
-.nav-cta::before{content:'';position:absolute;inset:-2px;z-index:-1;background:linear-gradient(325deg,#1E88E5 0%,#43A047 30%,#E53935 60%,#1E88E5 90%);background-size:280% auto;animation:shinyShift 4s ease infinite;filter:blur(10px);border-radius:14px;opacity:.5}
-.nav-cta:hover{transform:translateY(-2px);background-position:right top;box-shadow:0 0 28px rgba(30,136,229,.5),0 0 28px rgba(67,160,71,.4),0 0 28px rgba(229,57,53,.4),0 5px 8px -1px rgba(30,136,229,.3),inset 2px 2px 6px rgba(130,200,255,.35),inset -2px -2px 6px rgba(229,57,53,.25)}
+.nav-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:100px;border:none;font-weight:500 !important;font-size:.8rem;color:#999 !important;letter-spacing:.3px;cursor:pointer;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 100%);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.5),0 4px 8px rgba(0,0,0,.3),0 8px 16px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s var(--ease);opacity:1 !important;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.8);z-index:1}
+.nav-cta::before{content:'';position:absolute;inset:-1.5px;z-index:-1;background:linear-gradient(var(--metal-angle,325deg),#1E88E5,#43A047,#E53935,#1E88E5,#43A047);background-size:300% 300%;animation:liquidMetal 6s ease infinite;border-radius:100px;opacity:.7}
+.nav-cta::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),rgba(255,255,255,.1),rgba(255,255,255,.06),transparent);transform:skewX(-20deg);animation:metalShine 4s ease-in-out infinite;pointer-events:none;z-index:2}
+.nav-cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 20px rgba(30,136,229,.25),0 0 20px rgba(67,160,71,.2),0 0 20px rgba(229,57,53,.2),0 8px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1)}
+.nav-cta:active{transform:translateY(1px) scale(.98);box-shadow:0 0 0 1px rgba(255,255,255,.06),inset 0 2px 4px rgba(0,0,0,.4),0 2px 4px rgba(0,0,0,.3)}
 .nav-cta-wrap{position:relative;overflow:visible;border-radius:12px}
 .quote-dropdown{position:absolute;top:calc(100% + 12px);right:0;width:340px;background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;box-shadow:0 20px 60px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;z-index:1001}
 .quote-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
@@ -437,7 +443,9 @@ img{max-width:100%;display:block}
 
   /* Fixed mobile Request a Quote button — always visible at bottom */
   .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);justify-content:center}
-  .mobile-quote-cta .mob-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:none;border-radius:12px;background:linear-gradient(325deg,#1E88E5 0%,#43A047 30%,#E53935 60%,#1E88E5 90%);background-size:280% auto;animation:shinyShift 4s ease infinite;color:#fff;font-family:var(--font-h);font-weight:700;font-size:.92rem;cursor:pointer;transition:.3s var(--ease);box-shadow:0 0 16px rgba(30,136,229,.35),0 0 16px rgba(67,160,71,.25),0 0 16px rgba(229,57,53,.25),inset 2px 2px 6px rgba(130,200,255,.3),inset -2px -2px 6px rgba(229,57,53,.2)}
+  .mobile-quote-cta .mob-cta-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:none;border-radius:100px;background:linear-gradient(180deg,#1a1a1a 0%,#0a0a0a 100%);color:#999;font-family:var(--font-h);font-weight:500;font-size:.92rem;cursor:pointer;transition:.3s var(--ease);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.5),0 4px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.8);z-index:1}
+.mobile-quote-cta .mob-cta-btn::before{content:'';position:absolute;inset:-1.5px;z-index:-1;background:linear-gradient(325deg,#1E88E5,#43A047,#E53935,#1E88E5,#43A047);background-size:300% 300%;animation:liquidMetal 6s ease infinite;border-radius:100px;opacity:.7}
+.mobile-quote-cta .mob-cta-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),rgba(255,255,255,.1),rgba(255,255,255,.06),transparent);transform:skewX(-20deg);animation:metalShine 4s ease-in-out infinite;pointer-events:none;z-index:2}
 
   /* Adjust WhatsApp FAB and body padding for fixed CTA bar */
   .wa-fab{bottom:calc(70px + env(safe-area-inset-bottom,0px)) !important}
