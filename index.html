@@ -184,7 +184,7 @@ img{max-width:100%;display:block}
 .proof-icon svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2}
 
 /* ===== SECTION COMMON ===== */
-.section{padding:90px 0}
+.section{padding:90px 0;content-visibility:auto;contain-intrinsic-size:auto 500px}
 .section-label{font-family:var(--font-mono);font-size:.72rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
 .section-title{font-family:var(--font-h);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:16px;letter-spacing:-.02em}
 .section-desc{font-size:1rem;color:rgba(45,52,54,.65);max-width:560px;line-height:1.75}
@@ -642,6 +642,15 @@ img{max-width:100%;display:block}
   .rev-card{padding:18px}
   .hero-shader{filter:brightness(2.6) saturate(1.8) contrast(1.1)}
 }
+/* Mobile performance: disable heavy decorative animations */
+@media(max-width:768px){
+  .nav-cta{animation:none !important}
+  .hero-tag .pulse::after{animation:none !important}
+  .cat-card-img img,.prod-sub-img img{content-visibility:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+}
 </style>
 </head>
 <body>
@@ -812,7 +821,7 @@ img{max-width:100%;display:block}
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
     <div class="cat-card" data-modal="capsule-type">
-      <div class="cat-card-img"><img src="products/GLCP101_nobg.png" alt="Capsule Type Load Cell"></div>
+      <div class="cat-card-img"><img src="products/GLCP101_nobg.webp" alt="Capsule Type Load Cell" loading="lazy"></div>
       <div class="cat-card-info"><h4>Capsule Type Load Cells</h4></div>
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
@@ -822,7 +831,7 @@ img{max-width:100%;display:block}
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
     <div class="cat-card" data-modal="multi-axial">
-      <div class="cat-card-img"><img src="products/GLMA101_nobg.png" alt="Multi-Axial Force Sensor"></div>
+      <div class="cat-card-img"><img src="products/GLMA101_nobg.webp" alt="Multi-Axial Force Sensor" loading="lazy"></div>
       <div class="cat-card-info"><h4>Multi-Axial Force Sensors</h4></div>
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
@@ -842,12 +851,12 @@ img{max-width:100%;display:block}
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
     <div class="cat-card" data-modal="strain-torque">
-      <div class="cat-card-img"><img src="products/GLSR103_nobg.png" alt="Strain Torque Sensor"></div>
+      <div class="cat-card-img"><img src="products/GLSR103_nobg.webp" alt="Strain Torque Sensor" loading="lazy"></div>
       <div class="cat-card-info"><h4>Strain Torque Sensors</h4></div>
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
     <div class="cat-card" data-modal="dynamic-torque">
-      <div class="cat-card-img"><img src="products/GLDT101_nobg.png" alt="Dynamic Torque Sensor"></div>
+      <div class="cat-card-img"><img src="products/GLDT101_nobg.webp" alt="Dynamic Torque Sensor" loading="lazy"></div>
       <div class="cat-card-info"><h4>Dynamic Torque Sensors</h4></div>
       <svg class="cat-card-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </div>
@@ -1417,218 +1426,218 @@ if('IntersectionObserver' in window){
       title:'S Type Load Cells',
       desc:'Tension & compression measurement',
       items:[
-        {name:'GLST101',spec:'0–20T',img:'products/GLST101_nobg.png'},
-        {name:'GLST102',spec:'0–7T',img:'products/GLST102_nobg.png'},
-        {name:'GLST103',spec:'0–5T',img:'products/GLST103_nobg.png'},
-        {name:'GLST104',spec:'0–10T',img:'products/GLST104_nobg.png'},
-        {name:'GLST105',spec:'0–1.5T',img:'products/GLST105_nobg.png'},
-        {name:'GLST106',spec:'0–100kg',img:'products/GLST106_nobg.png'},
-        {name:'GLST107',spec:'0–200kg',img:'products/GLST107_nobg.png'},
-        {name:'GLST108',spec:'0–200kg',img:'products/GLST108_nobg.png'},
-        {name:'GLST108M',spec:'0–200kg',img:'products/GLST108M_nobg.png'},
-        {name:'GLST109',spec:'0–10kg',img:'products/GLST109_nobg.png'},
-        {name:'GLST110',spec:'50kg–1T',img:'products/GLST110_nobg.png'},
-        {name:'GLST111',spec:'200kg–3T',img:'products/GLST111_nobg.png'}
+        {name:'GLST101',spec:'0–20T',img:'products/GLST101_nobg.webp'},
+        {name:'GLST102',spec:'0–7T',img:'products/GLST102_nobg.webp'},
+        {name:'GLST103',spec:'0–5T',img:'products/GLST103_nobg.webp'},
+        {name:'GLST104',spec:'0–10T',img:'products/GLST104_nobg.webp'},
+        {name:'GLST105',spec:'0–1.5T',img:'products/GLST105_nobg.webp'},
+        {name:'GLST106',spec:'0–100kg',img:'products/GLST106_nobg.webp'},
+        {name:'GLST107',spec:'0–200kg',img:'products/GLST107_nobg.webp'},
+        {name:'GLST108',spec:'0–200kg',img:'products/GLST108_nobg.webp'},
+        {name:'GLST108M',spec:'0–200kg',img:'products/GLST108M_nobg.webp'},
+        {name:'GLST109',spec:'0–10kg',img:'products/GLST109_nobg.webp'},
+        {name:'GLST110',spec:'50kg–1T',img:'products/GLST110_nobg.webp'},
+        {name:'GLST111',spec:'200kg–3T',img:'products/GLST111_nobg.webp'}
       ]
     },
     'spoke-type':{
       title:'Spoke Type Load Cells',
       desc:'Low-profile compression measurement',
       items:[
-        {name:'GLSP101',spec:'0–50T',img:'products/GLSP101_nobg.png'},
-        {name:'GLSP102',spec:'0–450T',img:'products/GLSP102_nobg.png'},
-        {name:'GLSP103',spec:'0–100kN',img:'products/GLSP103_nobg.png'},
-        {name:'GLSP104',spec:'0–500T',img:'products/GLSP104_nobg.png'},
-        {name:'GLSP105',spec:'0–50T',img:'products/GLSP105_nobg.png'}
+        {name:'GLSP101',spec:'0–50T',img:'products/GLSP101_nobg.webp'},
+        {name:'GLSP102',spec:'0–450T',img:'products/GLSP102_nobg.webp'},
+        {name:'GLSP103',spec:'0–100kN',img:'products/GLSP103_nobg.webp'},
+        {name:'GLSP104',spec:'0–500T',img:'products/GLSP104_nobg.webp'},
+        {name:'GLSP105',spec:'0–50T',img:'products/GLSP105_nobg.webp'}
       ]
     },
     'shear-beam':{
       title:'Shear Beam Load Cells',
       desc:'Platform & weighbridge applications',
       items:[
-        {name:'GLSH301',spec:'0–10T',img:'products/GLSH301_nobg.png'},
-        {name:'GLSH302',spec:'0–5T',img:'products/GLSH302_nobg.png'},
-        {name:'GLSH303',spec:'0–3T',img:'products/GLSH303_nobg.png'},
-        {name:'GLSH304',spec:'0–5T',img:'products/GLSH304_nobg.png'},
-        {name:'GLSH305',spec:'0–2000kg',img:'products/GLSH305_nobg.png'},
-        {name:'GLSH306',spec:'0–2kg',img:'products/GLSH306_nobg.png'},
-        {name:'GLSH307',spec:'0–40kg',img:'products/GLSH307_nobg.png'},
-        {name:'GLSH308',spec:'0–350kg',img:'products/GLSH308_nobg.png'},
-        {name:'GLSH309',spec:'0–500kg',img:'products/GLSH309_nobg.png'},
-        {name:'GLSH310',spec:'50–1000kg',img:'products/GLSH310_nobg.png'},
-        {name:'GLSH311',spec:'0–10kN',img:'products/GLSH311_nobg.png'},
-        {name:'GLSH312',spec:'0–1000kg',img:'products/GLSH312_nobg.png'},
-        {name:'GLSH313',spec:'0–100T',img:'products/GLSH313_nobg.png'},
-        {name:'GLSH314',spec:'0–150T',img:'products/GLSH314_nobg.png'},
-        {name:'GLSH315',spec:'10–100N',img:'products/GLSH315_nobg.png'},
-        {name:'GLSH316',spec:'1–30T',img:'products/GLSH316_nobg.png'},
-        {name:'GLSH317',spec:'1–500T',img:'products/GLSH317_nobg.png'},
-        {name:'GLSH318',spec:'0–100T',img:'products/GLSH318_nobg.png'},
-        {name:'GLSH319',spec:'0–100T',img:'products/GLSH319_nobg.png'},
-        {name:'GLSH320',spec:'0–500μm/m',img:'products/GLSH320_nobg.png'},
-        {name:'GLSH321',spec:'0–50kg',img:'products/GLSH321_nobg.png'},
-        {name:'GLSH322',spec:'0–20T',img:'products/GLSH322_nobg.png'}
+        {name:'GLSH301',spec:'0–10T',img:'products/GLSH301_nobg.webp'},
+        {name:'GLSH302',spec:'0–5T',img:'products/GLSH302_nobg.webp'},
+        {name:'GLSH303',spec:'0–3T',img:'products/GLSH303_nobg.webp'},
+        {name:'GLSH304',spec:'0–5T',img:'products/GLSH304_nobg.webp'},
+        {name:'GLSH305',spec:'0–2000kg',img:'products/GLSH305_nobg.webp'},
+        {name:'GLSH306',spec:'0–2kg',img:'products/GLSH306_nobg.webp'},
+        {name:'GLSH307',spec:'0–40kg',img:'products/GLSH307_nobg.webp'},
+        {name:'GLSH308',spec:'0–350kg',img:'products/GLSH308_nobg.webp'},
+        {name:'GLSH309',spec:'0–500kg',img:'products/GLSH309_nobg.webp'},
+        {name:'GLSH310',spec:'50–1000kg',img:'products/GLSH310_nobg.webp'},
+        {name:'GLSH311',spec:'0–10kN',img:'products/GLSH311_nobg.webp'},
+        {name:'GLSH312',spec:'0–1000kg',img:'products/GLSH312_nobg.webp'},
+        {name:'GLSH313',spec:'0–100T',img:'products/GLSH313_nobg.webp'},
+        {name:'GLSH314',spec:'0–150T',img:'products/GLSH314_nobg.webp'},
+        {name:'GLSH315',spec:'10–100N',img:'products/GLSH315_nobg.webp'},
+        {name:'GLSH316',spec:'1–30T',img:'products/GLSH316_nobg.webp'},
+        {name:'GLSH317',spec:'1–500T',img:'products/GLSH317_nobg.webp'},
+        {name:'GLSH318',spec:'0–100T',img:'products/GLSH318_nobg.webp'},
+        {name:'GLSH319',spec:'0–100T',img:'products/GLSH319_nobg.webp'},
+        {name:'GLSH320',spec:'0–500μm/m',img:'products/GLSH320_nobg.webp'},
+        {name:'GLSH321',spec:'0–50kg',img:'products/GLSH321_nobg.webp'},
+        {name:'GLSH322',spec:'0–20T',img:'products/GLSH322_nobg.webp'}
       ]
     },
     'tension':{
       title:'Tension Sensors',
       desc:'Inline tension & force measurement',
       items:[
-        {name:'GLTN101',spec:'0–1000N',img:'products/GLTN101_nobg.png'},
-        {name:'GLTN102',spec:'1–200kN',img:'products/GLTN102_nobg.png'},
-        {name:'GLTN103',spec:'0–200kN',img:'products/GLTN103_nobg.png'},
-        {name:'GLTN104',spec:'0–3000kg',img:'products/GLTN104_nobg.png'},
-        {name:'GLTN105',spec:'20–300N',img:'products/GLTN105_nobg.png'},
-        {name:'GLTN106',spec:'0–100kg',img:'products/GLTN106_nobg.png'},
-        {name:'GLTN107',spec:'0–50kg',img:'products/GLTN107_nobg.png'}
+        {name:'GLTN101',spec:'0–1000N',img:'products/GLTN101_nobg.webp'},
+        {name:'GLTN102',spec:'1–200kN',img:'products/GLTN102_nobg.webp'},
+        {name:'GLTN103',spec:'0–200kN',img:'products/GLTN103_nobg.webp'},
+        {name:'GLTN104',spec:'0–3000kg',img:'products/GLTN104_nobg.webp'},
+        {name:'GLTN105',spec:'20–300N',img:'products/GLTN105_nobg.webp'},
+        {name:'GLTN106',spec:'0–100kg',img:'products/GLTN106_nobg.webp'},
+        {name:'GLTN107',spec:'0–50kg',img:'products/GLTN107_nobg.webp'}
       ]
     },
     'miniature':{
       title:'Miniature Load Cells',
       desc:'Compact force measurement',
       items:[
-        {name:'GLMI101',spec:'5–20kg',img:'products/GLMI101_nobg.png'},
-        {name:'GLMI102',spec:'1–100kg',img:'products/GLMI102_nobg.png'},
-        {name:'GLMI103',spec:'1–100kg',img:'products/GLMI103_nobg.png'},
-        {name:'GLMI104',spec:'50–500N',img:'products/GLMI104_nobg.png'},
-        {name:'GLMI105',spec:'0–200kg',img:'products/GLMI105_nobg.png'},
-        {name:'GLMI106',spec:'0–10T',img:'products/GLMI106_nobg.png'},
-        {name:'GLMI107',spec:'0–2000kg',img:'products/GLMI107_nobg.png'}
+        {name:'GLMI101',spec:'5–20kg',img:'products/GLMI101_nobg.webp'},
+        {name:'GLMI102',spec:'1–100kg',img:'products/GLMI102_nobg.webp'},
+        {name:'GLMI103',spec:'1–100kg',img:'products/GLMI103_nobg.webp'},
+        {name:'GLMI104',spec:'50–500N',img:'products/GLMI104_nobg.webp'},
+        {name:'GLMI105',spec:'0–200kg',img:'products/GLMI105_nobg.webp'},
+        {name:'GLMI106',spec:'0–10T',img:'products/GLMI106_nobg.webp'},
+        {name:'GLMI107',spec:'0–2000kg',img:'products/GLMI107_nobg.webp'}
       ]
     },
     'capsule-type':{
       title:'Capsule Type Load Cells',
       desc:'Compression measurement in confined spaces',
       items:[
-        {name:'GLCP101',spec:'50kg–15T',img:'products/GLCP101_nobg.png'},
-        {name:'GLCP102',spec:'50kg–10T',img:'products/GLCP102_nobg.png'},
-        {name:'GLCP103',spec:'0–500kg',img:'products/GLCP103_nobg.png'},
-        {name:'GLCP104',spec:'0–5T',img:'products/GLCP104_nobg.png'},
-        {name:'GLCP105',spec:'0–2T',img:'products/GLCP105_nobg.png'},
-        {name:'GLCP106',spec:'0–500kg',img:'products/GLCP106_nobg.png'},
-        {name:'GLCP107',spec:'0–20kN',img:'products/GLCP107_nobg.png'},
-        {name:'GLCP108',spec:'0–1000kg',img:'products/GLCP108_nobg.png'},
-        {name:'GLCP109',spec:'0–5kN',img:'products/GLCP109_nobg.png'},
-        {name:'GLCP110',spec:'2.5–20T',img:'products/GLCP110_nobg.png'},
-        {name:'GLCP111',spec:'0–50kg',img:'products/GLCP111_nobg.png'},
-        {name:'GLCP112',spec:'1–5T',img:'products/GLCP112_nobg.png'},
-        {name:'GLCP113',spec:'1–3T',img:'products/GLCP113_nobg.png'},
-        {name:'GLCP114',spec:'1–5T',img:'products/GLCP114_nobg.png'},
-        {name:'GLCP115',spec:'1–200kg',img:'products/GLCP115_nobg.png'},
-        {name:'GLCP116',spec:'1–200kg',img:'products/GLCP116_nobg.png'}
+        {name:'GLCP101',spec:'50kg–15T',img:'products/GLCP101_nobg.webp'},
+        {name:'GLCP102',spec:'50kg–10T',img:'products/GLCP102_nobg.webp'},
+        {name:'GLCP103',spec:'0–500kg',img:'products/GLCP103_nobg.webp'},
+        {name:'GLCP104',spec:'0–5T',img:'products/GLCP104_nobg.webp'},
+        {name:'GLCP105',spec:'0–2T',img:'products/GLCP105_nobg.webp'},
+        {name:'GLCP106',spec:'0–500kg',img:'products/GLCP106_nobg.webp'},
+        {name:'GLCP107',spec:'0–20kN',img:'products/GLCP107_nobg.webp'},
+        {name:'GLCP108',spec:'0–1000kg',img:'products/GLCP108_nobg.webp'},
+        {name:'GLCP109',spec:'0–5kN',img:'products/GLCP109_nobg.webp'},
+        {name:'GLCP110',spec:'2.5–20T',img:'products/GLCP110_nobg.webp'},
+        {name:'GLCP111',spec:'0–50kg',img:'products/GLCP111_nobg.webp'},
+        {name:'GLCP112',spec:'1–5T',img:'products/GLCP112_nobg.webp'},
+        {name:'GLCP113',spec:'1–3T',img:'products/GLCP113_nobg.webp'},
+        {name:'GLCP114',spec:'1–5T',img:'products/GLCP114_nobg.webp'},
+        {name:'GLCP115',spec:'1–200kg',img:'products/GLCP115_nobg.webp'},
+        {name:'GLCP116',spec:'1–200kg',img:'products/GLCP116_nobg.webp'}
       ]
     },
     'column-type':{
       title:'Column Type Load Cells',
       desc:'High-capacity compression measurement',
       items:[
-        {name:'GLCL100',spec:'0–500N',img:'products/GLCL100_nobg.png'},
-        {name:'GLCL101',spec:'0–2000kg',img:'products/GLCL101_nobg.png'},
-        {name:'GLCL102',spec:'0–50kg',img:'products/GLCL102_nobg.png'},
-        {name:'GLCL103',spec:'0–150kN',img:'products/GLCL103_nobg.png'},
-        {name:'GLCL104',spec:'0–100kN',img:'products/GLCL104_nobg.png'},
-        {name:'GLCL105',spec:'0–3000kg',img:'products/GLCL105_nobg.png'},
-        {name:'GLCL106',spec:'0–50kN',img:'products/GLCL106_nobg.png'},
-        {name:'GLCL107',spec:'0–200kg',img:'products/GLCL107_nobg.png'},
-        {name:'GLCL108',spec:'0–40T',img:'products/GLCL108_nobg.png'},
-        {name:'GLCL110',spec:'0–1000T',img:'products/GLCL110_nobg.png'},
-        {name:'GLCL111',spec:'5–500T',img:'products/GLCL111_nobg.png'},
-        {name:'D620',spec:'Column type',img:'products/D620_nobg.png'},
-        {name:'GLCL112',spec:'0–30T',img:'products/GLCL112_nobg.png'},
-        {name:'GLCL113',spec:'0–100T',img:'products/GLCL113_nobg.png'},
-        {name:'GLCL114',spec:'0–3500T',img:'products/GLCL114_nobg.png'},
-        {name:'GLCL115',spec:'3–30T',img:'products/GLCL115_nobg.png'},
-        {name:'GLCL116',spec:'0–200T',img:'products/GLCL116_nobg.png'},
-        {name:'GLCL117',spec:'0–50kg',img:'products/GLCL117_nobg.png'},
-        {name:'GLCL118',spec:'0–100kg',img:'products/GLCL118_nobg.png'},
-        {name:'GLCL119',spec:'5–50T',img:'products/GLCL119_nobg.png'},
-        {name:'GLCL120',spec:'30–500kg',img:'products/GLCL120_nobg.png'},
-        {name:'GLCL121',spec:'0–5000kg',img:'products/GLCL121_nobg.png'},
-        {name:'GLCL122',spec:'0–5000kg',img:'products/GLCL122_nobg.png'},
-        {name:'GLCL123',spec:'0–200kN',img:'products/GLCL123_nobg.png'},
-        {name:'GLCL124',spec:'1–470T',img:'products/GLCL124_nobg.png'}
+        {name:'GLCL100',spec:'0–500N',img:'products/GLCL100_nobg.webp'},
+        {name:'GLCL101',spec:'0–2000kg',img:'products/GLCL101_nobg.webp'},
+        {name:'GLCL102',spec:'0–50kg',img:'products/GLCL102_nobg.webp'},
+        {name:'GLCL103',spec:'0–150kN',img:'products/GLCL103_nobg.webp'},
+        {name:'GLCL104',spec:'0–100kN',img:'products/GLCL104_nobg.webp'},
+        {name:'GLCL105',spec:'0–3000kg',img:'products/GLCL105_nobg.webp'},
+        {name:'GLCL106',spec:'0–50kN',img:'products/GLCL106_nobg.webp'},
+        {name:'GLCL107',spec:'0–200kg',img:'products/GLCL107_nobg.webp'},
+        {name:'GLCL108',spec:'0–40T',img:'products/GLCL108_nobg.webp'},
+        {name:'GLCL110',spec:'0–1000T',img:'products/GLCL110_nobg.webp'},
+        {name:'GLCL111',spec:'5–500T',img:'products/GLCL111_nobg.webp'},
+        {name:'D620',spec:'Column type',img:'products/D620_nobg.webp'},
+        {name:'GLCL112',spec:'0–30T',img:'products/GLCL112_nobg.webp'},
+        {name:'GLCL113',spec:'0–100T',img:'products/GLCL113_nobg.webp'},
+        {name:'GLCL114',spec:'0–3500T',img:'products/GLCL114_nobg.webp'},
+        {name:'GLCL115',spec:'3–30T',img:'products/GLCL115_nobg.webp'},
+        {name:'GLCL116',spec:'0–200T',img:'products/GLCL116_nobg.webp'},
+        {name:'GLCL117',spec:'0–50kg',img:'products/GLCL117_nobg.webp'},
+        {name:'GLCL118',spec:'0–100kg',img:'products/GLCL118_nobg.webp'},
+        {name:'GLCL119',spec:'5–50T',img:'products/GLCL119_nobg.webp'},
+        {name:'GLCL120',spec:'30–500kg',img:'products/GLCL120_nobg.webp'},
+        {name:'GLCL121',spec:'0–5000kg',img:'products/GLCL121_nobg.webp'},
+        {name:'GLCL122',spec:'0–5000kg',img:'products/GLCL122_nobg.webp'},
+        {name:'GLCL123',spec:'0–200kN',img:'products/GLCL123_nobg.webp'},
+        {name:'GLCL124',spec:'1–470T',img:'products/GLCL124_nobg.webp'}
       ]
     },
     'multi-axial':{
       title:'Multi-Axial Force Sensors',
       desc:'Multi-directional force measurement',
       items:[
-        {name:'GLMA101',spec:'0–1000kg',img:'products/GLMA101_nobg.png'},
-        {name:'GLMA102',spec:'3–60N.m, 100–2000N',img:'products/GLMA102_nobg.png'},
-        {name:'GLMA103',spec:'1–50N.m, 50–1000N',img:'products/GLMA103_nobg.png'},
-        {name:'GLMA104',spec:'5–100kg',img:'products/GLMA104_nobg.png'},
-        {name:'GLMA105',spec:'100–5000N',img:'products/GLMA105_nobg.png'},
-        {name:'GLMA106',spec:'5–100kg',img:'products/GLMA106_nobg.png'},
-        {name:'GLMA107',spec:'0–1000kg',img:'products/GLMA107_nobg.png'},
-        {name:'GLMA108',spec:'300N, 10N.m',img:'products/GLMA108_nobg.png'},
-        {name:'GLMA109',spec:'10kN/750N.m',img:'products/GLMA109_nobg.png'},
-        {name:'GLMA110',spec:'20–100N, 0.5–5N.m',img:'products/GLMA110_nobg.png'},
-        {name:'GLMA112',spec:'5000N, 100N.m',img:'products/GLMA112_nobg.png'},
-        {name:'GLMA113',spec:'500N, 10N.m',img:'products/GLMA113_nobg.png'},
-        {name:'GLMA114',spec:'500N, 20N.m',img:'products/GLMA114_nobg.png'},
-        {name:'GLMA115',spec:'20kN, 500N.m',img:'products/GLMA115_nobg.png'},
-        {name:'GLMA116',spec:'100kN, 5000N.m',img:'products/GLMA116_nobg.png'}
+        {name:'GLMA101',spec:'0–1000kg',img:'products/GLMA101_nobg.webp'},
+        {name:'GLMA102',spec:'3–60N.m, 100–2000N',img:'products/GLMA102_nobg.webp'},
+        {name:'GLMA103',spec:'1–50N.m, 50–1000N',img:'products/GLMA103_nobg.webp'},
+        {name:'GLMA104',spec:'5–100kg',img:'products/GLMA104_nobg.webp'},
+        {name:'GLMA105',spec:'100–5000N',img:'products/GLMA105_nobg.webp'},
+        {name:'GLMA106',spec:'5–100kg',img:'products/GLMA106_nobg.webp'},
+        {name:'GLMA107',spec:'0–1000kg',img:'products/GLMA107_nobg.webp'},
+        {name:'GLMA108',spec:'300N, 10N.m',img:'products/GLMA108_nobg.webp'},
+        {name:'GLMA109',spec:'10kN/750N.m',img:'products/GLMA109_nobg.webp'},
+        {name:'GLMA110',spec:'20–100N, 0.5–5N.m',img:'products/GLMA110_nobg.webp'},
+        {name:'GLMA112',spec:'5000N, 100N.m',img:'products/GLMA112_nobg.webp'},
+        {name:'GLMA113',spec:'500N, 10N.m',img:'products/GLMA113_nobg.webp'},
+        {name:'GLMA114',spec:'500N, 20N.m',img:'products/GLMA114_nobg.webp'},
+        {name:'GLMA115',spec:'20kN, 500N.m',img:'products/GLMA115_nobg.webp'},
+        {name:'GLMA116',spec:'100kN, 5000N.m',img:'products/GLMA116_nobg.webp'}
       ]
     },
     'weighing-module':{
       title:'Weighing Modules',
       desc:'Complete weighing system assemblies',
       items:[
-        {name:'GLWG101',spec:'0–15T',img:'products/GLWG101_nobg.png'},
-        {name:'GLWG102',spec:'0–100T',img:'products/GLWG102_nobg.png'},
-        {name:'GLWG103',spec:'0–5T',img:'products/GLWG103_nobg.png'},
-        {name:'GLWG104',spec:'10–300kg',img:'products/GLWG104_nobg.png'},
-        {name:'GLWG105',spec:'0–40T',img:'products/GLWG105_nobg.png'},
-        {name:'GLWG106',spec:'0–500kg',img:'products/GLWG106_nobg.png'},
-        {name:'GLWG107',spec:'0–20T',img:'products/GLWG107_nobg.png'},
-        {name:'GLWG108',spec:'0–20T',img:'products/GLWG108_nobg.png'},
-        {name:'GLWG109',spec:'0–20T',img:'products/GLWG109_nobg.png'},
-        {name:'GLWG110',spec:'0–10T',img:'products/GLWG110_nobg.png'},
-        {name:'GLWG111',spec:'50T',img:'products/GLWG111_nobg.png'}
+        {name:'GLWG101',spec:'0–15T',img:'products/GLWG101_nobg.webp'},
+        {name:'GLWG102',spec:'0–100T',img:'products/GLWG102_nobg.webp'},
+        {name:'GLWG103',spec:'0–5T',img:'products/GLWG103_nobg.webp'},
+        {name:'GLWG104',spec:'10–300kg',img:'products/GLWG104_nobg.webp'},
+        {name:'GLWG105',spec:'0–40T',img:'products/GLWG105_nobg.webp'},
+        {name:'GLWG106',spec:'0–500kg',img:'products/GLWG106_nobg.webp'},
+        {name:'GLWG107',spec:'0–20T',img:'products/GLWG107_nobg.webp'},
+        {name:'GLWG108',spec:'0–20T',img:'products/GLWG108_nobg.webp'},
+        {name:'GLWG109',spec:'0–20T',img:'products/GLWG109_nobg.webp'},
+        {name:'GLWG110',spec:'0–10T',img:'products/GLWG110_nobg.webp'},
+        {name:'GLWG111',spec:'50T',img:'products/GLWG111_nobg.webp'}
       ]
     },
     'strain-torque':{
       title:'Strain Torque Sensors',
       desc:'Static torque & strain measurement',
       items:[
-        {name:'GLSR101',spec:'3000μɛ',img:'products/GLSR101_nobg.png'},
-        {name:'GLSR102',spec:'400μɛ',img:'products/GLSR102_nobg.png'},
-        {name:'GLSR103',spec:'0–10000N.m',img:'products/GLSR103_nobg.png'},
-        {name:'GLSR104',spec:'0–200N.m',img:'products/GLSR104_nobg.png'},
-        {name:'GLSR105',spec:'0–3000N.m',img:'products/GLSR105_nobg.png'},
-        {name:'GLSR106',spec:'0–150N.m',img:'products/GLSR106_nobg.png'},
-        {name:'GLSR107',spec:'0–2000N.m',img:'products/GLSR107_nobg.png'},
-        {name:'GLSR108',spec:'0.1–5000N.m',img:'products/GLSR108_nobg.png'},
-        {name:'GLSR109',spec:'0–1000N.m',img:'products/GLSR109_nobg.png'},
-        {name:'GLSR110',spec:'0.2–5kN.m',img:'products/GLSR110_nobg.png'},
-        {name:'GLSR111',spec:'0–3000N.m',img:'products/GLSR111_nobg.png'},
-        {name:'GLSR112',spec:'0–10000N.m',img:'products/GLSR112_nobg.png'},
-        {name:'GLSR113',spec:'Inclination sensor',img:'products/GLSR113_nobg.png'}
+        {name:'GLSR101',spec:'3000μɛ',img:'products/GLSR101_nobg.webp'},
+        {name:'GLSR102',spec:'400μɛ',img:'products/GLSR102_nobg.webp'},
+        {name:'GLSR103',spec:'0–10000N.m',img:'products/GLSR103_nobg.webp'},
+        {name:'GLSR104',spec:'0–200N.m',img:'products/GLSR104_nobg.webp'},
+        {name:'GLSR105',spec:'0–3000N.m',img:'products/GLSR105_nobg.webp'},
+        {name:'GLSR106',spec:'0–150N.m',img:'products/GLSR106_nobg.webp'},
+        {name:'GLSR107',spec:'0–2000N.m',img:'products/GLSR107_nobg.webp'},
+        {name:'GLSR108',spec:'0.1–5000N.m',img:'products/GLSR108_nobg.webp'},
+        {name:'GLSR109',spec:'0–1000N.m',img:'products/GLSR109_nobg.webp'},
+        {name:'GLSR110',spec:'0.2–5kN.m',img:'products/GLSR110_nobg.webp'},
+        {name:'GLSR111',spec:'0–3000N.m',img:'products/GLSR111_nobg.webp'},
+        {name:'GLSR112',spec:'0–10000N.m',img:'products/GLSR112_nobg.webp'},
+        {name:'GLSR113',spec:'Inclination sensor',img:'products/GLSR113_nobg.webp'}
       ]
     },
     'dynamic-torque':{
       title:'Dynamic Torque Sensors',
       desc:'Rotational dynamic torque measurement',
       items:[
-        {name:'GLDT101',spec:'0–20000N.m',img:'products/GLDT101_nobg.png'},        {name:'GLDT103',spec:'0–1000N.m',img:'products/GLDT103_nobg.png'},        {name:'GLDT107',spec:'0–5kN.m',img:'products/GLDT107_nobg.png'},        {name:'GLDT109',spec:'0–200N.m',img:'products/GLDT109_nobg.png'},
-        {name:'GLDT110',spec:'0–1000N.m',img:'products/GLDT110_nobg.png'},        {name:'GLDT112',spec:'0–300000N.m',img:'products/GLDT112_nobg.png'},
-        {name:'GLDT113',spec:'Dynamic torque sensor',img:'products/GLDT113_nobg.png'},
-        {name:'GLDT114',spec:'0–300kN.m',img:'products/GLDT114_nobg.png'},
-        {name:'GLDT115',spec:'0–10000N.m',img:'products/GLDT115_nobg.png'},
-        {name:'GLDT116',spec:'0–250000N.m',img:'products/GLDT116_nobg.png'}
+        {name:'GLDT101',spec:'0–20000N.m',img:'products/GLDT101_nobg.webp'},        {name:'GLDT103',spec:'0–1000N.m',img:'products/GLDT103_nobg.webp'},        {name:'GLDT107',spec:'0–5kN.m',img:'products/GLDT107_nobg.webp'},        {name:'GLDT109',spec:'0–200N.m',img:'products/GLDT109_nobg.webp'},
+        {name:'GLDT110',spec:'0–1000N.m',img:'products/GLDT110_nobg.webp'},        {name:'GLDT112',spec:'0–300000N.m',img:'products/GLDT112_nobg.webp'},
+        {name:'GLDT113',spec:'Dynamic torque sensor',img:'products/GLDT113_nobg.webp'},
+        {name:'GLDT114',spec:'0–300kN.m',img:'products/GLDT114_nobg.webp'},
+        {name:'GLDT115',spec:'0–10000N.m',img:'products/GLDT115_nobg.webp'},
+        {name:'GLDT116',spec:'0–250000N.m',img:'products/GLDT116_nobg.webp'}
       ]
     },
     'junction':{
       title:'Junction Boxes & Transmitters',
       desc:'Signal distribution and conversion',
-      items:[        {name:'GJBT104',spec:'Junction box',img:'products/GJBT104_nobg.png'},
-        {name:'GJBT105',spec:'Junction box',img:'products/GJBT105_nobg.png'},        {name:'GJBT111',spec:'Transmitter',img:'products/GJBT111_nobg.png'},
-        {name:'GJBT112',spec:'Transmitter',img:'products/GJBT112_nobg.png'},      ]
+      items:[        {name:'GJBT104',spec:'Junction box',img:'products/GJBT104_nobg.webp'},
+        {name:'GJBT105',spec:'Junction box',img:'products/GJBT105_nobg.webp'},        {name:'GJBT111',spec:'Transmitter',img:'products/GJBT111_nobg.webp'},
+        {name:'GJBT112',spec:'Transmitter',img:'products/GJBT112_nobg.webp'},      ]
     },
     'indicators':{
       title:'Digital Indicators & Controllers',
       desc:'Display and control units',
-      items:[        {name:'GDGC104',spec:'Digital indicator',img:'products/GDGC104_nobg.png'},        {name:'GDGC106',spec:'Digital indicator',img:'products/GDGC106_nobg.png'},        {name:'GDGC112',spec:'Digital indicator',img:'products/GDGC112_nobg.png'},        {name:'GDGC125',spec:'Solid state relay',img:'products/GDGC125_nobg.png'},        {name:'GDGC129',spec:'Digital indicator',img:'products/GDGC129_nobg.png'},      ]
+      items:[        {name:'GDGC104',spec:'Digital indicator',img:'products/GDGC104_nobg.webp'},        {name:'GDGC106',spec:'Digital indicator',img:'products/GDGC106_nobg.webp'},        {name:'GDGC112',spec:'Digital indicator',img:'products/GDGC112_nobg.webp'},        {name:'GDGC125',spec:'Solid state relay',img:'products/GDGC125_nobg.webp'},        {name:'GDGC129',spec:'Digital indicator',img:'products/GDGC129_nobg.webp'},      ]
     }
   };
 
@@ -1655,7 +1664,7 @@ if('IntersectionObserver' in window){
     modalDesc.textContent=cat.desc;
     modalGrid.innerHTML=cat.items.map(item=>
       '<div class="prod-sub" data-product="'+item.name+'">'+
-        '<div class="prod-sub-img"><img src="'+item.img+'" alt="'+item.name+'" onerror="this.style.display=\'none\'"></div>'+
+        '<div class="prod-sub-img"><img src="'+item.img+'" alt="'+item.name+'" loading="lazy" onerror="this.style.display=\'none\'"></div>'+
         '<h4>'+item.name+'</h4>'+
         '<p>'+item.spec+'</p>'+
       '</div>'
