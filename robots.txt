@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /temp/
+Disallow: /scripts/
+Disallow: /previews/
+Disallow: /products_cleaned/
+Disallow: /products_cleaned_test/
+Disallow: /products_manual_fix/
+Disallow: /products_glst_test/
+Disallow: /products_test_input/
+Disallow: /products_old/
+
+Sitemap: https://www.grvautomation.com/sitemap.xml
