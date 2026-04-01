@@ -1,0 +1,3291 @@
+{
+  "D620": {
+    "type": "Column Type Load Cell",
+    "range": "0.5-30T",
+    "features": [
+      "Column type compression load cell",
+      "Rated capacity 0.5-30T",
+      "High precision digital output option",
+      "Robust alloy steel construction",
+      "Suitable for platform and floor scales",
+      "Floor scales, tank weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0.5–30T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GDGC125": {
+    "type": "Weight Indicator",
+    "range": "Solid state relay",
+    "features": [
+      "Industrial solid state relay module",
+      "High-current switching capability",
+      "Compatible with load cell control systems",
+      "DIN rail or panel mount installation",
+      "Wide voltage range input and output",
+      "PLC integration, motor control, industrial automation"
+    ],
+    "specs": [
+      [
+        "Type",
+        "",
+        "Solid State Relay Module"
+      ],
+      [
+        "Channels",
+        "",
+        "1–4 configurable"
+      ],
+      [
+        "Load Rating",
+        "A",
+        "10–40"
+      ],
+      [
+        "Input Control",
+        "V DC",
+        "3–32"
+      ],
+      [
+        "Load Voltage",
+        "V AC",
+        "24–380"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−10 to +55"
+      ],
+      [
+        "Mounting",
+        "",
+        "DIN rail / panel"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GDGC129": {
+    "type": "Weight Indicator",
+    "range": "Digital indicator",
+    "features": [
+      "Digital weighing display and controller",
+      "Multi-function input and output options",
+      "RS232 / RS485 communication interface",
+      "High-resolution LED / LCD display",
+      "Front panel calibration capability",
+      "Industrial weighing, force monitoring, process control"
+    ],
+    "specs": [
+      [
+        "Input Signal",
+        "",
+        "Load cell mV/V"
+      ],
+      [
+        "Display",
+        "",
+        "6-digit LED / LCD"
+      ],
+      [
+        "Communication",
+        "",
+        "RS232 / RS485"
+      ],
+      [
+        "Output",
+        "",
+        "4–20mA / 0–10V / relay"
+      ],
+      [
+        "Power Supply",
+        "V AC",
+        "220 ±10%"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "0 to +45"
+      ],
+      [
+        "Enclosure",
+        "",
+        "Panel mount IP54"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL104": {
+    "type": "Column Type Load Cell",
+    "range": "10–150kN",
+    "features": [
+      "Miniature column type compression sensor",
+      "Rated capacity 10–150kN",
+      "High precision for small force applications",
+      "Stainless steel anti-corrosion body",
+      "Non-standard customization available",
+      "Press monitoring, structural testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "10–150kN"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZ-103-DAYSENSOR-Weighing-force-measurement-weight-load-cell-gravity-high-precision-miniature-column-tension-pressure-sensor-load-cell-pd550794868.html",
+    "dy_model": "DYZ-103",
+    "full_title": "DYZ-103 DAYSENSOR Weighing force measurement weight load cell gravity high precision miniature column tension pressure sensor load cell"
+  },
+  "GLCL105": {
+    "type": "Column Type Load Cell",
+    "range": "2–50kg",
+    "features": [
+      "Miniature column type compression sensor",
+      "Rated capacity 2–50kg",
+      "High precision for small force applications",
+      "Stainless steel anti-corrosion body",
+      "Non-standard customization available",
+      "Platform scales, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "2–50kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZ-102-DAYSENSOR-miniature-compression-force-sensor-micro-load-cell-high-temperature-load-cell-Mini-Button-Load-Cell-Force-Sensor-pd573694868.html",
+    "dy_model": "DYZ-102",
+    "full_title": "DYZ-102 DAYSENSOR miniature compression force sensor micro load cell high temperature load cell Mini Button Load Cell Force Sensor"
+  },
+  "GLCL106": {
+    "type": "Column Type Load Cell",
+    "range": "5–2000N",
+    "features": [
+      "Miniature column type compression sensor",
+      "Rated capacity 5–2000N",
+      "High precision for small force applications",
+      "Stainless steel anti-corrosion body",
+      "Non-standard customization available",
+      "Floor scales, hopper weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "5–2000N"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZ-101-DAYSENSOR-stainless-steel-loadcell-Subminiature-Button-Type-Compression-Force-Load-Cell-pd585794868.html",
+    "dy_model": "DYZ-101",
+    "full_title": "DYZ-101 DAYSENSOR stainless steel loadcell Subminiature Button Type Compression Force Load Cell"
+  },
+  "GLCL107": {
+    "type": "Column Type Load Cell",
+    "range": "0.5–10kg",
+    "features": [
+      "Miniature column type compression sensor",
+      "Rated capacity 0.5–10kg",
+      "High precision for small force applications",
+      "Stainless steel anti-corrosion body",
+      "Non-standard customization available",
+      "Platform scales, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0.5–10kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZ-100-DAYSENSOR-High-precision-Mini-small-size-Tension-Compression-pressure-Force-sensor-miniature-Button-column-type-load-cell-pd513485868.html",
+    "dy_model": "DYZ-100",
+    "full_title": "DYZ-100 DAYSENSOR High-precision Mini small-size Tension Compression pressure Force sensor miniature Button column type load cell"
+  },
+  "GLCL108": {
+    "type": "Column Type Load Cell",
+    "range": "10–500T",
+    "features": [
+      "High capacity column type load cell",
+      "Rated capacity 10–500T",
+      "Robust alloy steel construction",
+      "High stability under continuous load",
+      "Suitable for multi-column configurations",
+      "Floor scales, hopper weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "10–500T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZ-012-Dayang-genuine-column-sensor-large-range-floor-scale-sensor-500T-weighing-sensor-stainless-steel-high-precision-pd593234868.html",
+    "dy_model": "DYZ-012-Dayang-genuine-column-sensor-large-range-floor-scale-sensor-500T-weighing-sensor-stainless-steel-high-precision",
+    "full_title": "DYZ-012 Dayang genuine column sensor large range floor scale sensor 500T weighing sensor stainless steel high precision"
+  },
+  "GLCL115": {
+    "type": "Column Type Load Cell",
+    "range": "3-30T",
+    "features": [
+      "High capacity column type load cell",
+      "Rated capacity 3-30T",
+      "Robust alloy steel construction",
+      "High stability under continuous load",
+      "Suitable for multi-column configurations",
+      "Floor scales, hopper weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "3-30T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL116": {
+    "type": "Column Type Load Cell",
+    "range": "0-200T",
+    "features": [
+      "High capacity column type load cell",
+      "Rated capacity 0-200T",
+      "Robust alloy steel construction",
+      "High stability under continuous load",
+      "Suitable for multi-column configurations",
+      "Floor scales, hopper weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-200T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ6×5m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL117": {
+    "type": "Column Type Load Cell",
+    "range": "0-50kg",
+    "features": [
+      "Column type compression load cell",
+      "Rated capacity 0-50kg",
+      "High precision measurement",
+      "Stainless steel or alloy steel body",
+      "Anti-interference stable signal output",
+      "Platform scales, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-50kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL119": {
+    "type": "Column Type Load Cell",
+    "range": "5-50T",
+    "features": [
+      "High capacity column type load cell",
+      "Rated capacity 5-50T",
+      "Robust alloy steel construction",
+      "High stability under continuous load",
+      "Suitable for multi-column configurations",
+      "Floor scales, hopper weighing, industrial applications"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "5-50T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ6×5m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL120": {
+    "type": "Column Type Load Cell",
+    "range": "30-500kg",
+    "features": [
+      "Column type compression load cell",
+      "Rated capacity 30-500kg",
+      "High precision measurement",
+      "Stainless steel or alloy steel body",
+      "Anti-interference stable signal output",
+      "Platform scales, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "30-500kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL122": {
+    "type": "Column Type Load Cell",
+    "range": "0-5000kg",
+    "features": [
+      "Column type compression load cell",
+      "Rated capacity 0-5000kg",
+      "High precision measurement",
+      "Stainless steel or alloy steel body",
+      "Anti-interference stable signal output",
+      "Platform scales, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-5000kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCL123": {
+    "type": "Column Type Load Cell",
+    "range": "0-200kN",
+    "features": [
+      "High capacity column type load cell",
+      "Rated capacity 0-200kN",
+      "Robust alloy steel construction",
+      "High stability under continuous load",
+      "Suitable for multi-column configurations",
+      "Press monitoring, structural testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-200kN"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×4m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCP109": {
+    "type": "Capsule Type Load Cell",
+    "range": "0-5kN",
+    "features": [
+      "Capsule type miniature tension and compression sensor",
+      "Rated capacity 0-5kN",
+      "High stability with anti-interference output",
+      "Compact size for confined space installation",
+      "Stainless steel construction",
+      "Automation, assembly line testing, industrial force measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-5kN"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCP110": {
+    "type": "Capsule Type Load Cell",
+    "range": "2.5-20T",
+    "features": [
+      "Capsule type miniature tension and compression sensor",
+      "Rated capacity 2.5-20T",
+      "High stability with anti-interference output",
+      "Compact size for confined space installation",
+      "Stainless steel construction",
+      "Automation, assembly line testing, industrial force measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "2.5-20T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCP112": {
+    "type": "Capsule Type Load Cell",
+    "range": "1-5T",
+    "features": [
+      "Capsule type miniature tension and compression sensor",
+      "Rated capacity 1-5T",
+      "High stability with anti-interference output",
+      "Compact size for confined space installation",
+      "Stainless steel construction",
+      "Automation, assembly line testing, industrial force measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "1-5T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCP113": {
+    "type": "Capsule Type Load Cell",
+    "range": "1-3T",
+    "features": [
+      "Capsule type miniature tension and compression sensor",
+      "Rated capacity 1-3T",
+      "High stability with anti-interference output",
+      "Compact size for confined space installation",
+      "Stainless steel construction",
+      "Automation, assembly line testing, industrial force measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "1-3T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLCP114": {
+    "type": "Capsule Type Load Cell",
+    "range": "1-5T",
+    "features": [
+      "Capsule type miniature tension and compression sensor",
+      "Rated capacity 1-5T",
+      "High stability with anti-interference output",
+      "Compact size for confined space installation",
+      "Stainless steel construction",
+      "Automation, assembly line testing, industrial force measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "1-5T"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLDT110": {
+    "type": "Dynamic Torque Sensor",
+    "range": "2–50000N.m",
+    "features": [
+      "Large range non-contact dynamic torque sensor",
+      "Rated capacity 2–50000N.m",
+      "Contactless coupler for extended service life",
+      "Real-time torque, speed, and power measurement",
+      "Built-in signal processing and digital output",
+      "Heavy machinery testing, industrial motor testing, power measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "2–50000N.m"
+      ],
+      [
+        "Speed Range",
+        "rpm",
+        "0–10000"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Communication",
+        "",
+        "RS485 (up to 1000 Hz)"
+      ],
+      [
+        "Display",
+        "",
+        "OLED built-in"
+      ],
+      [
+        "Excitation Voltage",
+        "V DC",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "4–20mA / 0–10V / RS485"
+      ],
+      [
+        "Shaft Connection",
+        "",
+        "Standard coupling"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYN-210-DAYSENSOR-Large-Range-Non-Contact-coupler-power-measuring-instrument-speed-rotary-Force-Sensor-Transducer-dynamic-torque-sensor-pd532943868.html",
+    "dy_model": "DYN-210",
+    "full_title": "DYN-210 DAYSENSOR Large Range Non-Contact coupler power measuring instrument speed rotary Force Sensor Transducer dynamic torque sensor"
+  },
+  "GLDT113": {
+    "type": "Dynamic Torque Sensor",
+    "range": "Dynamic torque sensor",
+    "features": [
+      "Dynamic rotational torque and speed sensor",
+      "Rated capacity Dynamic torque sensor",
+      "Simultaneous torque, speed, and power measurement",
+      "RS485 high-speed digital communication",
+      "Built-in OLED display for real-time reading",
+      "Motor testing, pump testing, power measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "Dynamic torque sensor"
+      ],
+      [
+        "Speed Range",
+        "rpm",
+        "0–10000"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Communication",
+        "",
+        "RS485 (up to 1000 Hz)"
+      ],
+      [
+        "Display",
+        "",
+        "OLED built-in"
+      ],
+      [
+        "Excitation Voltage",
+        "V DC",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "4–20mA / 0–10V / RS485"
+      ],
+      [
+        "Shaft Connection",
+        "",
+        "Standard coupling"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLDT114": {
+    "type": "Dynamic Torque Sensor",
+    "range": "0-300kN.m",
+    "features": [
+      "Dynamic rotational torque and speed sensor",
+      "Rated capacity 0-300kN.m",
+      "Simultaneous torque, speed, and power measurement",
+      "RS485 high-speed digital communication",
+      "Built-in OLED display for real-time reading",
+      "Motor testing, pump testing, power measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-300kN.m"
+      ],
+      [
+        "Speed Range",
+        "rpm",
+        "0–10000"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Communication",
+        "",
+        "RS485 (up to 1000 Hz)"
+      ],
+      [
+        "Display",
+        "",
+        "OLED built-in"
+      ],
+      [
+        "Excitation Voltage",
+        "V DC",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "4–20mA / 0–10V / RS485"
+      ],
+      [
+        "Shaft Connection",
+        "",
+        "Standard coupling"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLDT115": {
+    "type": "Dynamic Torque Sensor",
+    "range": "0-10000N.m",
+    "features": [
+      "Dynamic rotational torque and speed sensor",
+      "Rated capacity 0-10000N.m",
+      "Simultaneous torque, speed, and power measurement",
+      "RS485 high-speed digital communication",
+      "Built-in OLED display for real-time reading",
+      "Motor testing, pump testing, power measurement"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-10000N.m"
+      ],
+      [
+        "Speed Range",
+        "rpm",
+        "0–10000"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Communication",
+        "",
+        "RS485 (up to 1000 Hz)"
+      ],
+      [
+        "Display",
+        "",
+        "OLED built-in"
+      ],
+      [
+        "Excitation Voltage",
+        "V DC",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "4–20mA / 0–10V / RS485"
+      ],
+      [
+        "Shaft Connection",
+        "",
+        "Standard coupling"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMA102": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "3–60N.m, 100–2000N",
+    "features": [
+      "Three-axis composite force and torque sensor",
+      "Force range 100–2000N, torque range 3–60N.m",
+      "Multi-dimensional measurement in single unit",
+      "High rigidity for dynamic applications",
+      "Suitable for robotic arm force control",
+      "Robot testing, CNC force monitoring, quality control"
+    ],
+    "specs": [
+      [
+        "Force Range",
+        "",
+        "100–2000N"
+      ],
+      [
+        "Torque Range",
+        "N.m",
+        "3–60"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYDW-003-100N-300N-500N-1000N-pressure-torque-sensor-composite-three-multi-dimensional-component-3-axis-force-sensor-measuring-load-cell-pd542473868.html",
+    "dy_model": "DYDW-003-100N-300N-500N-1000N-pressure-torque-sensor-composite-three-multi-dimensional-component-3-axis-force-sensor-measuring-load-cell",
+    "full_title": "DYDW-003 100N 300N 500N 1000N pressure torque sensor composite three multi dimensional component 3 axis force sensor measuring load cell"
+  },
+  "GLMA105": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "100–5000N",
+    "features": [
+      "Six-dimensional force sensor for collaborative robots",
+      "Force range 100–5000N",
+      "6-axis simultaneous Fx/Fy/Fz and Mx/My/Mz",
+      "Designed for grinding and collaborative robot end-effectors",
+      "High rigidity compact structure",
+      "Robot end-effectors, grinding, CNC force control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "100–5000N"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYDW-Y74-DAYSENSOR-Six-dimensional-force-sensor-Grinding-collaborative-industrial-robot-machine-tool-cutting-force-detection-three-dimensional-pd557853868.html",
+    "dy_model": "DYDW-Y74",
+    "full_title": "DYDW- Y74 DAYSENSOR Six-dimensional force sensor Grinding collaborative industrial robot machine tool cutting force detection three-dimensional"
+  },
+  "GLMA106": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "5–100kg",
+    "features": [
+      "Precision 6-axis multi-axis force sensor",
+      "Rated capacity 5–100kg",
+      "Multi-directional force and torque measurement",
+      "High accuracy for precision applications",
+      "Compact design for integration",
+      "Research, quality testing, multi-axis force control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "5–100kg"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYDW-25-DAYSENSOR-Precision-Sensors-6-axis-Multi-axis-Sensor-2-Multi-Torque-Three-Axis-Load-Cell-pd549953868.html",
+    "dy_model": "DYDW-25",
+    "full_title": "DYDW-γ25 DAYSENSOR Precision Sensors 6-axis Multi-axis Sensor 2 Multi Torque Three Axis Load Cell"
+  },
+  "GLMA107": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "0-1000kg",
+    "features": [
+      "Multi-axis force and torque measurement sensor",
+      "Rated capacity 0-1000kg",
+      "Multi-directional force measurement capability",
+      "High accuracy composite force sensing",
+      "Compact design for integration",
+      "Robotic arms, material testing, force control systems"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-1000kg"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMA108": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "300N, 10N.m",
+    "features": [
+      "Multi-axis force and torque measurement sensor",
+      "Rated capacity 300N, 10N.m",
+      "Multi-directional force measurement capability",
+      "High accuracy composite force sensing",
+      "Compact design for integration",
+      "Robotic arms, material testing, force control systems"
+    ],
+    "specs": [
+      [
+        "Force Range",
+        "",
+        "10N.m"
+      ],
+      [
+        "Torque Range",
+        "N.m",
+        "300N"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMA109": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "10kN/750N.m",
+    "features": [
+      "Multi-axis force and torque measurement sensor",
+      "Rated capacity 10kN/750N.m",
+      "Multi-directional force measurement capability",
+      "High accuracy composite force sensing",
+      "Compact design for integration",
+      "Robotic arms, material testing, force control systems"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "10kN/750N.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMA113": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "500N, 10N.m",
+    "features": [
+      "Multi-axis force and torque measurement sensor",
+      "Rated capacity 500N, 10N.m",
+      "Multi-directional force measurement capability",
+      "High accuracy composite force sensing",
+      "Compact design for integration",
+      "Robotic arms, material testing, force control systems"
+    ],
+    "specs": [
+      [
+        "Force Range",
+        "",
+        "10N.m"
+      ],
+      [
+        "Torque Range",
+        "N.m",
+        "500N"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMA116": {
+    "type": "Multi-Axial Force Sensor",
+    "range": "100kN, 5000N.m",
+    "features": [
+      "Multi-axis force and torque measurement sensor",
+      "Rated capacity 100kN, 5000N.m",
+      "Multi-directional force measurement capability",
+      "High accuracy composite force sensing",
+      "Compact design for integration",
+      "Robotic arms, material testing, force control systems"
+    ],
+    "specs": [
+      [
+        "Force Range",
+        "",
+        "5000N.m"
+      ],
+      [
+        "Torque Range",
+        "N.m",
+        "100kN"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.5"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Output",
+        "",
+        "Analog mV/V or digital RS485"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, multi-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLMI104": {
+    "type": "Miniature Load Cell",
+    "range": "50–500N",
+    "features": [
+      "Miniature compression load cell",
+      "Rated capacity 50–500N",
+      "Ultra-compact design for space-limited applications",
+      "High sensitivity and precision",
+      "Stainless steel construction",
+      "Medical devices, automation, small force testing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "50–500N"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Stainless Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP65"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ3×2m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYHW-110-DAYSENSOR-Miniature-compression-load-cell-5kg-3kg-20kg-50kg-100kg-Miniature-push-pull-force-sensor-Miniature-button-sensor-diameter-pd595286868.html",
+    "dy_model": "DYHW-110",
+    "full_title": "DYHW-110 DAYSENSOR Miniature compression load cell 5kg 3kg 20kg 50kg 100kg Miniature push-pull force sensor Miniature button sensor diameter"
+  },
+  "GLSH315": {
+    "type": "Shear Beam Load Cell",
+    "range": "10-100N",
+    "features": [
+      "Shear beam precision load cell",
+      "Rated capacity 10-100N",
+      "High accuracy for platform and industrial scales",
+      "Sealed construction for harsh environments",
+      "Easy installation and calibration",
+      "Platform scales, packaging machines, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "10-100N"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ4×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR101": {
+    "type": "Strain Torque Sensor",
+    "range": "0–3000N.m",
+    "features": [
+      "Torque tool calibrator with digital LCD display",
+      "Rated capacity 0–3000N.m",
+      "Power screwdriver and torque wrench calibration",
+      "Digital LCD readout for direct measurement",
+      "High accuracy strain-gauge torque sensing",
+      "Torque wrench calibration, power tool testing, QA inspection"
+    ],
+    "specs": [
+      [
+        "Measurement Type",
+        "",
+        "0–3000N.m"
+      ],
+      [
+        "Range",
+        "μɛ",
+        "3000μɛ"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYJN-103-Torque-Tool-Calibrator-with-Digital-LCD-for-Power-Screwdrivers-and-Torque-Wrenches-pd533156148.html",
+    "dy_model": "DYJN-103-Torque-Tool-Calibrator-with-Digital-LCD-for-Power-Screwdrivers-and-Torque-Wrenches",
+    "full_title": "DYJN-103 Torque Tool Calibrator with Digital LCD for Power Screwdrivers and Torque Wrenches"
+  },
+  "GLSR102": {
+    "type": "Strain Torque Sensor",
+    "range": "0–400N.m",
+    "features": [
+      "Electric screwdriver and air screwdriver torque tester",
+      "Rated capacity 0–400N.m",
+      "Bottle cap and motor torque calibration",
+      "Digital LCD display for instant readings",
+      "Compact benchtop design for QA stations",
+      "Assembly line torque verification, bottle cap testing, motor QA"
+    ],
+    "specs": [
+      [
+        "Measurement Type",
+        "",
+        "0–400N.m"
+      ],
+      [
+        "Range",
+        "μɛ",
+        "400μɛ"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYJN-113-Electric-Screwdriver-and-Air-Screwdriver-Torque-Tester-Bottle-Cap-Motor-Torque-Wrench-Calibrator-Sensor-LCD-Display-pd521456148.html",
+    "dy_model": "DYJN-113-Electric-Screwdriver-and-Air-Screwdriver-Torque-Tester-Bottle-Cap-Motor-Torque-Wrench-Calibrator-Sensor-LCD-Display",
+    "full_title": "DYJN-113 Electric Screwdriver and Air Screwdriver Torque Tester, Bottle Cap Motor Torque Wrench Calibrator, Sensor LCD Display"
+  },
+  "GLSR108": {
+    "type": "Strain Torque Sensor",
+    "range": "0.1-5000N.m",
+    "features": [
+      "Static strain torque sensor",
+      "Rated capacity 0.1-5000N.m",
+      "High precision torsion measurement",
+      "Alloy steel robust construction",
+      "Wide application range for torque calibration",
+      "Torque wrench calibration, motor testing, valve control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0.1-5000N.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR109": {
+    "type": "Strain Torque Sensor",
+    "range": "0-1000N.m",
+    "features": [
+      "Static strain torque sensor",
+      "Rated capacity 0-1000N.m",
+      "High precision torsion measurement",
+      "Alloy steel robust construction",
+      "Wide application range for torque calibration",
+      "Torque wrench calibration, motor testing, valve control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-1000N.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR110": {
+    "type": "Strain Torque Sensor",
+    "range": "0.2-5kN.m",
+    "features": [
+      "Static strain torque sensor",
+      "Rated capacity 0.2-5kN.m",
+      "High precision torsion measurement",
+      "Alloy steel robust construction",
+      "Wide application range for torque calibration",
+      "Torque wrench calibration, motor testing, valve control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0.2-5kN.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR111": {
+    "type": "Strain Torque Sensor",
+    "range": "0-3000N.m",
+    "features": [
+      "Static strain torque sensor",
+      "Rated capacity 0-3000N.m",
+      "High precision torsion measurement",
+      "Alloy steel robust construction",
+      "Wide application range for torque calibration",
+      "Torque wrench calibration, motor testing, valve control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-3000N.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR112": {
+    "type": "Strain Torque Sensor",
+    "range": "0-10000N.m",
+    "features": [
+      "Static strain torque sensor",
+      "Rated capacity 0-10000N.m",
+      "High precision torsion measurement",
+      "Alloy steel robust construction",
+      "Wide application range for torque calibration",
+      "Torque wrench calibration, motor testing, valve control"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-10000N.m"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.2"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.1"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Output",
+        "",
+        "mV/V or 4–20mA"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×3m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLSR113": {
+    "type": "Strain Torque Sensor",
+    "range": "Inclination sensor",
+    "features": [
+      "High-precision inclination detection sensor",
+      "Multi-axis tilt angle measurement",
+      "Digital output with RS485 communication",
+      "Rugged enclosure for industrial environments",
+      "Wide measurement range with high resolution",
+      "Structural monitoring, slope detection, machine leveling"
+    ],
+    "specs": [
+      [
+        "Type",
+        "",
+        "Inclinometer / Tilt Sensor"
+      ],
+      [
+        "Measurement Axes",
+        "",
+        "Single / Dual axis"
+      ],
+      [
+        "Range",
+        "°",
+        "±10 to ±90"
+      ],
+      [
+        "Resolution",
+        "°",
+        "0.01"
+      ],
+      [
+        "Accuracy",
+        "°",
+        "±0.05"
+      ],
+      [
+        "Output",
+        "",
+        "RS485 / 4–20mA / 0–10V"
+      ],
+      [
+        "Power Supply",
+        "V DC",
+        "12–24"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLTN103": {
+    "type": "Tension Sensor",
+    "range": "0–200kN",
+    "features": [
+      "Wire rope tension force clamp sensor",
+      "Rated capacity 0–200kN",
+      "Low-cost clamp-on design for easy installation",
+      "High accuracy wire rope force measurement",
+      "Suitable for continuous online tension monitoring",
+      "Crane cables, elevator ropes, cable tension monitoring"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0–200kN"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×5m, 4-wire"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYZL-101-DAYSENSOR-Low-cost-wire-rope-force-load-cells-transducer-clamp-on-rope-tension-sensor-pd558786868.html",
+    "dy_model": "DYZL-101",
+    "full_title": "DYZL-101 DAYSENSOR Low cost wire rope force load cells transducer clamp on rope tension sensor"
+  },
+  "GLTN107": {
+    "type": "Tension Sensor",
+    "range": "0-50kg",
+    "features": [
+      "Industrial tension and compression sensor",
+      "Rated capacity 0-50kg",
+      "High stability tension measurement",
+      "Robust design for industrial environments",
+      "Standard thread mounting options",
+      "Tension monitoring, force testing, industrial weighing"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-50kg"
+      ],
+      [
+        "Output Sensitivity",
+        "mV/V",
+        "2.0±10%"
+      ],
+      [
+        "Non-linearity",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Hysteresis",
+        "%F.S.",
+        "0.03"
+      ],
+      [
+        "Repeatability",
+        "%F.S.",
+        "0.02"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel"
+      ],
+      [
+        "Input/Output Impedance",
+        "Ω",
+        "350±5 / 350±5"
+      ],
+      [
+        "Excitation Voltage",
+        "V",
+        "5–15 (recommended 10)"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "Safety Overload",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Cable",
+        "",
+        "Φ5×5m, 4-wire"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLWG107": {
+    "type": "Weighing Module",
+    "range": "0–20T",
+    "features": [
+      "Dynamic torque and speed measurement weighing module",
+      "Rated capacity 0–20T",
+      "Integrated sensor with display system",
+      "Real-time speed and power calculation",
+      "RS485 / analog output options",
+      "Motor testing, pump testing, power measurement systems"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0–20T"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Mounting",
+        "",
+        "Welding or bolted flange"
+      ],
+      [
+        "Degree of Freedom",
+        "",
+        "2D / 3D constrained"
+      ],
+      [
+        "Overload Protection",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Applicable Load Cell",
+        "",
+        "Column type / shear beam"
+      ]
+    ],
+    "source_url": "https://www.7sensor.com/DYN-204-DAYSENSOR-Factory-direct-1800RPM-speed-power-detector-measurement-Small-Range-Rotary-Force-dynamic-torque-sensor-pd532843868.html",
+    "dy_model": "DYN-204",
+    "full_title": "DYN-204 DAYSENSOR Factory direct 1800RPM speed power detector measurement Small Range Rotary Force dynamic torque sensor"
+  },
+  "GLWG109": {
+    "type": "Weighing Module",
+    "range": "0-20T",
+    "features": [
+      "Industrial weighing module assembly",
+      "Rated capacity 0-20T",
+      "Complete mounting kit with load cell integration",
+      "Self-stabilizing design for tank and silo applications",
+      "Easy bolt-on installation",
+      "Tank weighing, silo weighing, batching systems"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "0-20T"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Mounting",
+        "",
+        "Welding or bolted flange"
+      ],
+      [
+        "Degree of Freedom",
+        "",
+        "2D / 3D constrained"
+      ],
+      [
+        "Overload Protection",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Applicable Load Cell",
+        "",
+        "Shear beam / column type"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  },
+  "GLWG111": {
+    "type": "Weighing Module",
+    "range": "50T",
+    "features": [
+      "Industrial weighing module assembly",
+      "Rated capacity 50T",
+      "Complete mounting kit with load cell integration",
+      "Self-stabilizing design for tank and silo applications",
+      "Easy bolt-on installation",
+      "Tank weighing, silo weighing, batching systems"
+    ],
+    "specs": [
+      [
+        "Rated Capacity",
+        "",
+        "50T"
+      ],
+      [
+        "Material",
+        "",
+        "Alloy Steel / Stainless Steel"
+      ],
+      [
+        "Mounting",
+        "",
+        "Welding or bolted flange"
+      ],
+      [
+        "Degree of Freedom",
+        "",
+        "2D / 3D constrained"
+      ],
+      [
+        "Overload Protection",
+        "%R.C.",
+        "150"
+      ],
+      [
+        "Operating Temp.",
+        "°C",
+        "−20 to +70"
+      ],
+      [
+        "IP Rating",
+        "",
+        "IP67"
+      ],
+      [
+        "Applicable Load Cell",
+        "",
+        "Shear beam / column type"
+      ]
+    ],
+    "source_url": "",
+    "dy_model": "",
+    "full_title": ""
+  }
+}
