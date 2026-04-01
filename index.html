@@ -441,16 +441,19 @@ img{max-width:100%;display:block}
   /* CTA — hide nav button on mobile; use fixed bar instead */
   .nav-cta-wrap{display:none !important}
 
-  /* Fixed mobile Request a Quote button — always visible at bottom */
-  .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);justify-content:center}
-  .mobile-quote-cta .mob-cta-btn{isolation:isolate;position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:360px;padding:14px 24px;border:2px solid transparent;border-radius:360px;background:linear-gradient(#000,#000) padding-box,conic-gradient(from var(--gradient-angle),#00BFA6,#00D4FF,#1B3A5C,#00BFA6) border-box;color:#fff;font-family:var(--font-h);font-weight:500;font-size:.92rem;cursor:pointer;animation:shinyRotate 3s linear infinite}
+  /* Fixed mobile bottom bar — WhatsApp + Request a Quote side by side */
+  .mobile-quote-cta{display:flex !important;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:8px 12px;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.08);align-items:center;justify-content:center;gap:10px}
+  .mob-wa-btn{display:flex;align-items:center;justify-content:center;width:46px;height:46px;min-width:46px;border-radius:50%;background:#25D366;flex-shrink:0;box-shadow:0 2px 8px rgba(37,211,102,.3)}
+  .mob-wa-btn svg{width:22px;height:22px;fill:#fff}
+  .mob-wa-btn:active{transform:scale(.93)}
+  .mobile-quote-cta .mob-cta-btn{isolation:isolate;position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:1;max-width:280px;padding:12px 20px;border:1.5px solid transparent;border-radius:360px;background:linear-gradient(#000,#000) padding-box,conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),transparent,var(--shiny-highlight,#42a5f5) var(--gradient-percent),var(--gradient-shine) calc(var(--gradient-percent)*2),var(--shiny-highlight2,#66bb6a) calc(var(--gradient-percent)*3),var(--shiny-highlight3,#ef5350) calc(var(--gradient-percent)*4),transparent calc(var(--gradient-percent)*5)) border-box;color:#fff;font-family:var(--font-h);font-weight:500;font-size:.85rem;cursor:pointer;animation:shinyRotate 3s linear infinite}
   .mobile-quote-cta .mob-cta-btn::before,.mobile-quote-cta .mob-cta-btn::after{display:none}
   .mobile-quote-cta .mob-cta-btn span{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px}
   .mobile-quote-cta .mob-cta-btn:active{translate:0 1px}
 
-  /* Adjust WhatsApp FAB and body padding for fixed CTA bar */
-  .wa-fab{bottom:calc(70px + env(safe-area-inset-bottom,0px)) !important}
-  body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
+  /* Hide standalone WhatsApp FAB on mobile — it's in the bottom bar now */
+  .wa-fab{display:none !important}
+  body{padding-bottom:calc(62px + env(safe-area-inset-bottom,0px))}
 
   /* Hide hamburger — tabs are visible */
   .hamburger{display:none !important}
@@ -1001,6 +1004,9 @@ img{max-width:100%;display:block}
 
 <!-- MOBILE REQUEST A QUOTE BAR -->
 <div class="mobile-quote-cta" id="mobileQuoteCta">
+  <a href="https://wa.me/919008300172" class="mob-wa-btn" target="_blank" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+  </a>
   <button class="mob-cta-btn" id="mobQuoteBtn">
     <span>
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
